@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+compile %r{^/blog/post} do
+  unless item.binary?
+    filter :erb
+    filter :kramdown if item[:extension] == "md"
+    layout "post"
+  end
+end
+
+compile %r{^/(js|css)} do
+  filter :erb
+end
+
+compile '*' do
+  unless item.binary?
+    filter :erb
+    layout 'default'
+  end
+end
+
+route %r{^/blog/post} do
+  y,m,d,t = /([0-9]{4})([0-9]{2})([0-9]{2})-([^\/]+)/
+    .match(item.identifier).captures
+  if item.binary?
+    dir,bin = /([^#]+)+#(.+)/.match("#{t}.#{item[:extension]}").captures
+    "/blog/post/#{y}/#{m}/#{d}/#{dir}/#{bin}"
+  else
+    "/blog/post/#{y}/#{m}/#{d}/#{t}/index.html"
+  end
+end
+
+route %r{^/(js|css)} do
+  item.identifier.chop + "." + item[:extension]
+end
+
+route '*' do
+  if item.binary?
+    item.identifier.chop + '.' + item[:extension]
+  else
+    item.identifier + 'index.html'
+  end
+end
+
+layout '*', :erb

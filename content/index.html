@@ -1,0 +1,28 @@
+---
+title: Home
+---
+
+<div class="container-fluid">
+  <div class="row-fluid">
+  	<div class="span2">
+  		<img src="/img/profil.jpg">
+  	</div>
+    <div class="span8">
+    	<div class="title">Recent Blog Posts</div>
+          <ul class="arrow-list">
+            <% recent_posts(5).each do |article| %>
+            <li>
+              <%= link_to(article[:title], article.path) %>
+              at
+              <%=
+                 require "time"
+                 Time.parse(article[:created_at]).strftime("%e %b, %Y")
+              %>
+            </li>
+            <% end %>
+          </ul>
+          <div><%= link_to "Continues...", "/blog/" %></div>
+    </div>
+    <div class="span2 text-right"></div>
+  </div>
+</div>

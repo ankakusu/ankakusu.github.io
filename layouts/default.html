@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> Yaprak Ayazoglu - <%= @item[:title] %></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/stylesheet.css">
+    
+    <%=
+       css = @item[:css]
+       css = @css if defined? @css
+       '<link rel="stylesheet" href="/css/%s.css">' % (css) if css
+    %>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>"> 
+  </head>
+  <body>
+    <div id="main">
+      <div id="menu">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <a class="brand">Yaprak Ayazoğlu</a>
+          <ul class="nav">
+            <%=
+              [
+                ["Home", "/"],
+                ["Blog", "/blog/"],
+                ["Travel", "/travel/"],
+                ["About", "/about/"]
+              ].map { |caption, url|
+                "<li%s>#{link_to caption, url}</li>" %
+                  (" class='active'" if @item.identifier == url)
+              }.join()
+            %>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <%= yield %>
+    </div>
+  </body>
+</html>
