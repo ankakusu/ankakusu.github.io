@@ -8,7 +8,14 @@ compile %r{^/blog/post} do
   end
 end
 
-compile %r{^/(js|css)} do
+compile %r{^/travel/} do
+  unless item.binary?
+    filter :erb
+    layout "travel"
+  end
+end
+
+compile %r{^/(js|css|lib)} do
   filter :erb
 end
 
@@ -30,7 +37,7 @@ route %r{^/blog/post} do
   end
 end
 
-route %r{^/(js|css)} do
+route %r{^/(js|css|lib)} do
   item.identifier.chop + "." + item[:extension]
 end
 

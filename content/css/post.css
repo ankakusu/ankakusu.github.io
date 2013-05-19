@@ -1,0 +1,26 @@
+#post .head .title{
+	font-size: 22pt;
+}
+
+#post .head .subtitle{
+	font-size: 9pt;
+}
+
+#post .head .share{
+	font-size: 12pt;
+}
+
+#post .body{
+	margin-top: 10px;
+	font-size: 12pt;
+}
+
+.map-container{
+	position: fixed;
+}
+
+.map-container #map-mini{
+	border: solid red 1px;
+	width: 370px;
+	height: 500px;
+}
