@@ -1,0 +1,8 @@
+#head .project-info{
+	background-color: gray
+}
+
+#map-canvas {
+    height: 630px;
+    width: 100%;
+}
