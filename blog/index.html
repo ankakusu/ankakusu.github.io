@@ -1,9 +1,19 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
-    <title> Yaprak Ayazoglu - </title>
+    <title> Yaprak Ayazoglu - Blog</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/lib/angular.min.js"></script>
+    <script src="/lib/angular-resource.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+
+    <script src="/js/services.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/controllers.js"></script>
+
+
+    <script type="text/javascript" src="/js/post.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/stylesheet.css">
     
@@ -29,27 +39,32 @@
         <div class="navbar-inner">
           <a class="brand">Yaprak Ayazoğlu</a>
           <ul class="nav">
-            <li><a href="/">Home</a></li><li class='active'><a href="/blog/">Blog</a></li><li><a href="/travel/">Travel</a></li><li><a href="/about/">About</a></li>
+            <li><a href="/">Home</a></li><li class='active'><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li>
           </ul>
         </div>
       </div>
     </div>
+
+    <div ng-app="ya" id="content">
       <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span2"></div>
 		<div class="span8">
 			<ul>
 				
-					<li>May 07 - <a href="/blog/post/2013/05/07/Intro/">Intro</a></li>
+					<li>May 19 - <a href="/blog/post/2013/05/18/BreakfastAtSahilkoy/">Breakfast at Sahilköy</a></li>
 				
 					<li>May 07 - <a href="/blog/post/2013/05/07/IlkYazi/">İlk Yazı</a></li>
 				
-			</ul>
+					<li>May 07 - <a href="/blog/post/2013/05/07/Intro/">Intro</a></li>
+				
+			</ul> 
 		</div>
 	</div>
 	
 
 </div>
+    </div>
     </div>
   </body>
 </html>
