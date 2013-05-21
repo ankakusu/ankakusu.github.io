@@ -8,13 +8,6 @@ compile %r{^/blog/post} do
   end
 end
 
-compile %r{^/travel/} do
-  unless item.binary?
-    filter :erb
-    layout "travel"
-  end
-end
-
 compile %r{^/(js|css|lib)} do
   filter :erb
 end
