@@ -24,3 +24,8 @@
 	width: 370px;
 	height: 500px;
 }
+
+#photoAlbum{
+	width: 100%;
+	border: solid 1px solid;
+}
