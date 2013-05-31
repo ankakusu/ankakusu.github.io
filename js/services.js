@@ -3,7 +3,7 @@
 /* Services */
 var app = angular.module('google-maps', ['ngResource']);
 
-app.factory('GoogleMaps', function($http) {
+app.factory('GoogleMaps', function($http, $location, $rootScope) {
     var maps = {};
     var items = [];
     var myOptions; 
@@ -11,7 +11,7 @@ app.factory('GoogleMaps', function($http) {
     
     function setOptions(options){
         var lat = 41.04207384890103;
-        var lng = lng = 29.0972900390625;
+        var lng = 29.0972900390625;
         var zoom = 11;
         if(options){
             if(options.lat) lat = options.lat;
@@ -38,13 +38,18 @@ app.factory('GoogleMaps', function($http) {
         return maps[mapId];
     }
 
-    function putMarker(mapId, params){
+    function putMarker(mapId, params, name){
         var loc = new google.maps.LatLng(params.lat, params.lng);
         var marker = new google.maps.Marker( 
         {
             position: loc,
-            map: getMap(mapId)
-        });     
+            map: getMap(mapId),
+            icon: "/img/markerImg.png"
+        });  
+
+        google.maps.event.addListener(marker, 'click', function(event){
+            window.location = "#/" + name;
+        })   
     }
 
     function putPicture(mapId, params ){
