@@ -10,7 +10,9 @@
 
     <script src="/js/services.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/picture.js"></script>
     <script src="/js/controllers.js"></script>
+
 
     <script type="text/javascript" src="/js/post.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -46,6 +48,7 @@
               [
                 ["Home", "/"],
                 ["Blog", "/blog/"],
+                ["Projects" , "/projects/"],
                 ["About", "/about/"]
               ].map { |caption, url|
                 "<li%s>#{link_to caption, url}</li>" %

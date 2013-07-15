@@ -1,16 +1,19 @@
 ---
 title: Blog
+css: blog
 ---
 
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span2"></div>
 		<div class="span8">
-			<ul>
+			<div class="white-box rounded-corners">
+				<ul>
 				<% sorted_articles.each do |article| %>
 					<li><%= Time.parse(article[:created_at]).strftime("%B %d") %> - <%= link_to(article[:title], article.path) %></li>
 				<% end %>
-			</ul> 
+			</ul> 	
+			</div>
 		</div>
 	</div>
 	

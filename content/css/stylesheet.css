@@ -11,3 +11,8 @@ body {
 img[src*="gstatic.com/"], img[src*="googleapis.com/"]  {
     max-width: 99999px;
 }
+
+.projects{
+	padding-bottom: 20px;
+}
+

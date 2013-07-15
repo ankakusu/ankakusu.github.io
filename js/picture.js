@@ -19,24 +19,21 @@ Picture = function(pic, map){
 	this.setMap = function(map) { _map = map; };
 
 	var _createMarker = function(){
-		var myMarker = new google.maps.Marker({
-			position : new google.maps.LatLng( _.getLat(), _.getLng() ),
-			map : _.getMap(),
+		var myMarker :new google.maps.Marker({
+			position : new google.maps.LatLng( getLat(), getLng() ),
+			map : getMap(),
 			icon : "/img/markerImg.png"
 		});
 
 		google.maps.event.addListener(myMarker, 'click' , function(event){
-			window.location = "#/" + _.getPath();
+			window.location("#/" + getPath() );
 		});
 	}
 
 	var _init = function(){
-		_.setPath(pic.name);
-		_.setLat(pic.loc.lat);
-		_.setLng(pic.loc.lng);
-		_.setMap(map);
+		setPath(pic.name);
+		setLat(pic.loc.lat);
+		setLng(pic.loc.lng);
+		setMap(map);
 	}
-
-	_init();
-	_createMarker();
 }

@@ -23,8 +23,8 @@ function contentCtrl($scope, $location, $http, GoogleMaps){
 		$scope.currentImageIndex = 0;
 		$scope.currentImage = $scope.imageList[0].name;
 		$(data).each(function(index, value){
-			$scope.picList.push( new Picture(value, GoogleMaps.getMap("#map-mini") ) );
-			// GoogleMaps.putMarker("#map-mini", value); 
+			// $scope.picList.push( new Picture(value, GoogleMaps.getMap("#map-mini") ) );
+			// GoogleMaps.putMarker("#map-mini", value);
 		});
 	});
 
