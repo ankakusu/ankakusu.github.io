@@ -99,74 +99,57 @@ and ready and hungry enough to have our breakfast.
 Incidentally, there was a local football tournament and that was the answer to the crowd there. Local people were interested on us, and we changed information about whereabouts, job title, the reason for visit :) then we all drawn into a new and tasty chat with local people. 
 That is common in Turkey especially when you are at a village :) If they saw a guest at their village, they show their hospitality: offering whatever food they have, chatting with you and make you feel that you are a member of their family. For me, that is the best thing for trips. You meet new people, talk with them, learn how they live, what they do, how they think. You are welcomed to pick some fresh vegetables from their garden and eat them. We are generally offered fresh cow milk, and newly fermented cheese and yogurt. If you do not have a place to sleep they will gracefully offer you a bed :) When you offer even for a symbolic payment for all those help they will be upset and reject it.
 
-<!-- <a name="/2.jpg"></a><a name="/3.jpg">
-</a><a name="/4.jpg"></a><a name="/5.jpg"></a><a name="/6.jpg"></a> -->
-
-<!-- <%= put_anchor([{:name => "2.jpg" }, {:name => "3.jpg" }, {:name => "4.jpg" }, {:name => "5.jpg" }, {:name => "6.jpg" }]) %> -->
-
 Anyway, after the chat, we ordered tea and eat our food with a big big appetite :) In the mean time, we were also feeding the chickens with
  bread, cheese, sesame, plums, cherry, banana etc. and they eat all, sometimes fighting with each other to eat one others food. 
  Finally, we are full and sipping our tea and oralet.
 
  <%= 
- insert_pic( "sahilkoy", [{ :name => "WeAreFull.jpg", 
-					:path => "content/blog/post/20130518-BreakfastAtSahilkoy#WeAreFull.jpg",
-					:alt => "Where we start", 
-			:lat => 41.202666666666666, :lng => 29.41283333333333},
-			{ :name => "TeaAndOralet.jpg", 
-			:path => "content/blog/post/20130518-BreakfastAtSahilkoy#TeaAndOralet.jpg",
-			:alt => "Tea and Oralet", 
-			:lat => 41.202666666666666, :lng => 29.41283333333333}]) %> 
-<!-- <center> 
-	<span> 
-		<a href="#/WeAreFull.jpg/41.202666666666666/29.41283333333333"> 
-			<img src="WeAreFull.jpg" alt="We are full :)"> 
-		</a>   
-	</span> 
-	<span> 
-		<a href="#/TeaAndOralet.jpg/41.202666666666666/29.41283333333333">
-			<img src="TeaAndOralet.jpg" alt="Tea and Oralet">
-		</a> 
-	</span> 
-</center> -->
+ insert_pic( "sahilkoy", [
+ 	{ 	
+	 	:name => "WeAreFull.jpg", 
+		:path => "content/blog/post/20130518-BreakfastAtSahilkoy#WeAreFull.jpg",
+		:alt => "Where we start", 
+		:lat => 41.202666666666666, 
+		:lng => 29.41283333333333
+	},
+	{	:name => "TeaAndOralet.jpg", 
+		:path => "content/blog/post/20130518-BreakfastAtSahilkoy#TeaAndOjpg",
+		:alt => "Tea and Oralet", 
+		:lat => 41.202666666666666, 
+		:lng => 29.41283333333333
+	}
+	]) 
+%> 
 
- We finished feeding them they were wandering around:) I though there were searching food, but there as an 
+We finished feeding them they were wandering around:) I though there were searching food, but there as an 
 <a href="#/TheEgg.jpg/41.202666666666666/29.41283333333333">**egg**</a> there! Yay! Locals presented that egg to me :) When I took it it was warm! 
+
+
   <%= 
-  insert_pic( 
-  "sahilkoy" ,  
-  [{:name => "Chickens.jpg",
-			:path => "content/blog/post/20130518-BreakfastAtSahilkoy#Chickens.jpg",
-			:alt => "The chickens wandering around.", 
-			:lat => 41.202666666666666, :lng => 29.41283333333333},
-			{:name => "TheEgg.jpg", 
-			:path => "content/blog/post/20130518-BreakfastAtSahilkoy#TheEgg.jpg",
- 			:alt => "That egg is warm!", 
-			:lat => 41.202666666666666, :lng => 29.41283333333333}]) 
+  	insert_pic( "sahilkoy2" , [
+  	{
+  		:name => "Chickens.jpg",
+		:path => "content/blog/post/20130518-BreakfastAtSahilkoy#Chickens.jpg",
+		:alt => "The chickens wandering around.", 
+		:lat => 41.202666666666666, 
+		:lng => 29.41283333333333
+	},
+	{
+		:name => "TheEgg.jpg", 
+		:path => "content/blog/post/20130518-BreakfastAtSahilkoy#TheEgg.jpg",
+ 		:alt => "That egg is warm!", 
+		:lat => 41.202666666666666, 
+		:lng => 29.41283333333333
+	}
+	]) 
  %> 
-
-
-<!--
-
-<center>
-	<span>
-		<a href="#/TheEgg.jpg/41.202666666666666/29.41283333333333"> 
-			<img src="TheEgg.jpg" alt="That egg is warm!"> 
-		</a> 
-	</span> 
-	<span> 
-		<a href="#/Chickens.jpg/41.202666666666666/29.41283333333333">
-			<img src="Chickens.jpg" alt="The chickens wandering around.">
-		</a> 
-	</span> 
-</center> -->
 
  Now, it is time to go! But one final task to do: Find a place to buy a Indian buffalo yogurt! 
  Well, note that, as a Turk it is funny to say **Indian Buffalo Yogurt** to **manda yoğurdu** :)
   We asked to local people and they directed us to 
+
  <%= insert_location(41.163833333333336, 29.2715, "Bozhane Village.") %>
 
-<!-- <a href="#/MandaYogurdu.jpg/41.163833333333336/29.2715">Bozhane Village.</a>  -->
  While we were leaving they were deeply talking about manda yoğurdu:
 
  _"I used to eat a lot of manda yoğurdu when I was a child! But now we sold all our Manda's."_
@@ -185,16 +168,19 @@ Anyway, after the chat, we ordered tea and eat our food with a big big appetite 
 
  
  _"It is so fatty."_
-<!-- <center> 
-	<a href="#/MandaYogurdu.jpg/41.163833333333336/29.2715">
-		<img src="MandaYogurdu.jpg" alt="We found Manda Yoğurdu at Bozhane Village.">
-	</a>	 
-</center> -->
-  <%= 
-  insert_pic( "bozhane" , [{ :name => "MandaYogurdu.jpg",
-                :path => "content/blog/post/20130518-BreakfastAtSahilkoy#MandaYogurdu.jpg",
-                :alt => "Bozhane Village.",
-			:lat => 41.163833333333336, :lng => 29.2715}]) 
+
+
+<%= insert_pic( "bozhane" , 
+[
+	{ 
+		:name => "MandaYogurdu.jpg",
+      :path => "content/blog/post/20130518-BreakfastAtSahilkoy#MandaYogurdu.jpg",
+      :alt => "Bozhane Village.",
+		:lat => 41.163833333333336, 
+		:lng => 29.2715
+	}
+]
+)
 %> 
 
 Our final stop before home was the <a href="#/41.10341484314047/29.06810760498047">Kanlıca Square.</a>  We asked for a hot water and brewed out own tea: 
