@@ -11,10 +11,16 @@ tags:
   - programming
 ---
 
+<% def insert_location(lat,lng, text)
+		"<a class='location' href=\"#/" + lat.to_s + "/" + lng.to_s +  "\">" + text + "</a>"
+	end	
+%>
+
 Aslında her şey bir tesadüf eseri başladı. Bütün haftasonunu kapsayan dolu dolu bir CoffeScript ve BackboneJS eğitimi olduğunu öğrendim. Nasıl öğrendiğimi hiç sormayın oldukça düşük bir olasılık. Yüce kozmoz bu eğitime katılmam için gerekli olan zincirleme olayları bilinçli olarak başlattı diye düşünüyorum :)
 
 
-Uzun lafı yine uzunca bir cümleyle ifade edersek, [Girişim Fabrikası](http://girisimfabrikasi.com/)'nın ev sahipliğini yaptığı, [Webbox.io](http://webbox.io/)'nun organize ettiği, genç yaşına rağmen Front-End development konusunda oldukça deneyim ve bilgi sahibi olan Fatih Kadir Akın](http://fatihak.in/)'ın da eğitimci olduğu CoffeeScript ve BackboneJS eğitimininde ben de vardım! :)
+Uzun lafı yine uzunca bir cümleyle ifade edersek, [Girişim Fabrikası](http://girisimfabrikasi.com/)'nın 
+<%= insert_location(41.07838065438113, 29.008841514587402, "ev sahipliğini") %>  yaptığı, [Webbox.io](http://webbox.io/)'nun organize ettiği, genç yaşına rağmen Front-End development konusunda oldukça deneyim ve bilgi sahibi olan [Fatih Kadir Akın](http://fatihak.in/)'ın da eğitimci olduğu CoffeeScript ve BackboneJS [eğitimininde](http://webbox.io/workshop/tr/coffee/) ben de vardım! :)
 
 
 "Ne var canım, internet doküman kaynıyor gider okurum öğrenirim. Para vermeye ne gerek var?" diye düşünenler de vardır elbet ama bir düşünün bakalım bir sanatçının müziklerini müzik çalardan dinlemek ile konserini izlemek aynı mı olur? Konserin kendine özgü bir büyüsü olur. Çünkü orada aynı zevke sahip bir insan topluluğunun içindesinizdir. Ezbere bildiğiniz şarkıları hep beraber söylersiniz. Biz de bu etkinlikte kod yazmayı seven insanlar olarak bir araya geldik :) Hani hep bir ağızdan şarkı söylemedik ama İstanbul'da ulaşım, tavuk göğsünün içinde gerçekten tavuk olup olmadığı gibi konular dışında hep bir ağızdan yazılım teknolojileri ile ilgili sohbet ettik. Özellikle Türkiye koşullarında zoraki mühendis olmuş, mesai saati bitince işinden kaçarak giden insanlardan sonra yazılıma, web teknolojilerine aşık insanlarla bir haftasonu geçirmek sanki çevrende hiç Behzat Ç. izleyen insan yokken bir anda Akbaba ile Hayalet'in dialoglarını birbirine anlatıp da gülüp eğleneceğin, unuttuğun dialogları hatırlayacağın bir grup insanla tanışmak gibi, yani güzel bi şey...

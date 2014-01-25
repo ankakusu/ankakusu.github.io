@@ -43,9 +43,11 @@ app.factory('GoogleMaps', function($http, $location, $rootScope) {
         var marker = new google.maps.Marker( 
         {
             position: loc,
-            map: getMap(mapId),
-            icon: "/img/markerImg.png"
+            map: getMap(mapId)
+           // icon: "/img/markerImg.png"
         });  
+
+        getMap(mapId).setCenter(loc);
 
         google.maps.event.addListener(marker, 'click', function(event){
             window.location = "#/" + name;

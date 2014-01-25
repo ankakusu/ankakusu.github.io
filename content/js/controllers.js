@@ -30,9 +30,9 @@ function contentCtrl($scope, $location, $http, GoogleMaps){
 
 	$scope.$on("$routeChangeSuccess", function($event, next, current) {
         if(next.params.picturePath){
-           // GoogleMaps.putPicture( '#map-mini', next.params);
+           GoogleMaps.putPicture( '#map-mini', next.params);
         }else if(next.params.lat){
-        	// GoogleMaps.putMarker('#map-mini', next.params);
+        	GoogleMaps.putMarker('#map-mini', next.params);
         }
     });
 

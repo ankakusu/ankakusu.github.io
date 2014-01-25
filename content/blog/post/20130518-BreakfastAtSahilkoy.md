@@ -57,7 +57,7 @@ tags:
 %>
 
 <% def insert_location(lat,lng, text)
-		"<a href=\"#/" + lat.to_s + "/" + lng.to_s +  "\">" + text + "</a>"
+		"<a class='location' href=\"#/" + lat.to_s + "/" + lng.to_s +  "\">" + text + "</a>"
 	end	
 %>
 
