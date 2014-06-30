@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> Yaprak Ayazoglu - CoffeeScript ve BackboneJS Dolu Bir Haftasonu</title>
+    <title> Yaprak Ayazoglu - ContextMenu with AngularJS Directives</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/lib/angular.min.js"></script>
     <script src="/lib/angular-resource.min.js"></script>
@@ -58,9 +58,9 @@
 		<div class="span8">
 			<div id="post">
 				<div class="head">
-					<div class="title"> CoffeeScript ve BackboneJS Dolu Bir Haftasonu </div>
+					<div class="title"> ContextMenu with AngularJS Directives </div>
 					<div class="subtitle"> posted at
-					    January 25, 2014 </div>
+					    June 27, 2014 </div>
 					<div class="share">
 					    <!-- AddThis Button BEGIN -->
 					    <div class="addthis_toolbox addthis_default_style ">
@@ -76,29 +76,31 @@
 				  </div>
 				</div>
 				<div class="body" ng-controller="contentCtrl"> 
-					
-<p>Aslında her şey bir tesadüf eseri başladı. Bütün haftasonunu kapsayan dolu dolu bir CoffeScript ve BackboneJS eğitimi olduğunu öğrendim. Nasıl öğrendiğimi hiç sormayın oldukça düşük bir olasılık. Yüce kozmoz bu eğitime katılmam için gerekli olan zincirleme olayları bilinçli olarak başlattı diye düşünüyorum :)</p>
+					<p>I’ve been searching, reading blogs, books, watching videos about AngularJS directives. Finally, I feel ready to write a simple directive: Context Menu (right-click menu).</p>
 
-<p>Uzun lafı yine uzunca bir cümleyle ifade edersek, <a href="http://girisimfabrikasi.com/">Girişim Fabrikası</a>‘nın 
-<a class="location" href="#/41.07838065438113/29.008841514587402">ev sahipliğini</a>  yaptığı, <a href="http://webbox.io/">Webbox.io</a>‘nun organize ettiği, genç yaşına rağmen Front-End development konusunda oldukça deneyim ve bilgi sahibi olan <a href="http://fatihak.in/">Fatih Kadir Akın</a>‘ın da eğitimci olduğu CoffeeScript ve BackboneJS <a href="http://webbox.io/workshop/tr/coffee/">eğitimininde</a> ben de vardım! :)</p>
+<p>First of all, let’s decide on the behaviour of a context-menu? Hide &amp; show of an intially created div or append &amp; remove a dynamically created element? </p>
 
-<p>“Ne var canım, internet doküman kaynıyor gider okurum öğrenirim. Para vermeye ne gerek var?” diye düşünenler de vardır elbet ama bir düşünün bakalım bir sanatçının müziklerini müzik çalardan dinlemek ile konserini izlemek aynı mı olur? Konserin kendine özgü bir büyüsü olur. Çünkü orada aynı zevke sahip bir insan topluluğunun içindesinizdir. Ezbere bildiğiniz şarkıları hep beraber söylersiniz. Biz de bu etkinlikte kod yazmayı seven insanlar olarak bir araya geldik :) Hani hep bir ağızdan şarkı söylemedik ama İstanbul’da ulaşım, tavuk göğsünün içinde gerçekten tavuk olup olmadığı gibi konular dışında hep bir ağızdan yazılım teknolojileri ile ilgili sohbet ettik. Özellikle Türkiye koşullarında zoraki mühendis olmuş, mesai saati bitince işinden kaçarak giden insanlardan sonra yazılıma, web teknolojilerine aşık insanlarla bir haftasonu geçirmek sanki çevrende hiç Behzat Ç. izleyen insan yokken bir anda Akbaba ile Hayalet’in dialoglarını birbirine anlatıp da gülüp eğleneceğin, unuttuğun dialogları hatırlayacağın bir grup insanla tanışmak gibi, yani güzel bi şey…</p>
+<p>TL;DR, appending and removing items is the right approach. </p>
 
-<p>İki gün boyunca sabah 10.00’dan neredeyse akşam 20.00’a kadar eğitildik de eğitildik :) Eğitimin ismine bakarsak sadece CoffeScript ve BackboneJS öğrendiğimi düşünebilirsiniz ama aslında front-end development ile ilgili, kitaplardan yada internetteki dokümanlardan bulamayacağımız ince detayları keşfedebilme fırsatı yakaladık. Öyle ki hayat bir kolay gözüktü gözüme :) En güzel yanı da eğitimi işini çok seven bir insandan almak oldu.</p>
+<p>Non TL;DR, first of all, in my specific case, I’m working on dynamically created SVG elements and dynamic contextmenu generation is an important feature for me. When I follow the hide &amp; show method whenever I leave the div to click an item of context menu, it disappeared. Please right click at the “Right Click On the Item!” text given in the sample below:</p>
 
-<p>İki günlük eğitim sonrasında kendimi ne kadar geliştirdiğimi gördükten sonra düşünmeden edemiyorum: Türkiye’de yazılımı seven insanlar birbiriyle daha çok iletişime geçebiliyor olsa Türkiye nereye gelirdi?</p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/yaprak/76aR9/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-<p>Bu eğitimin gerçekleşmesinde emeği geçen abimiz Uğur Özyılmazel’e, eğitimcimiz Fatih Kadir Akın’a, ev sahipliği yapan Girişim Fabrikası’na teşekkür etmek istiyorum. </p>
+<p>In my trial and errors, I eliminated the first method and continued with this better one(in my opinion):</p>
 
-<p>Eğitimde tanıştığım arkadaşlarıma da selamlar olsun!</p>
+<p>In this approached, I defined an string at the scope, which defines the HTML for a contextmenu (<code>$scope.myContextDiv</code>) and passed this string to my <code>contextMenu</code> directive. While linking my function, I appended the context menu to the right-clicked element.</p>
+
+<p>JS Fiddle:</p>
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/yaprak/5Lk2V/14/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 			      <div id="disqus_thread"></div>
 				    <script type="text/javascript">
 				        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 				        var disqus_shortname = 'yaprak'; // required: replace example with your forum shortname
-				        var disqus_identifier = '/blog/post/20140125-CoffeeScriptBackboneJSEgitimi/';
-						var disqus_title = 'CoffeeScript ve BackboneJS Dolu Bir Haftasonu';
+				        var disqus_identifier = '/blog/post/20140627-ContextMenuDirectiveAngularJS/';
+						var disqus_title = 'ContextMenu with AngularJS Directives';
 
 				        /* * * DON'T EDIT BELOW THIS LINE * * */
 				        (function() {
