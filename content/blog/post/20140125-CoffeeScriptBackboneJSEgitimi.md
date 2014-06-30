@@ -2,6 +2,7 @@
 kind: article
 created_at: 2014-01-25 09:43 EET
 title: CoffeeScript ve BackboneJS Dolu Bir Haftasonu
+map_included: true
 tags:
   - turkish
   - javascript

@@ -2,6 +2,7 @@
 kind: article
 created_at: 2013-05-18 11:11 EET
 title: Breakfast at Sahilköy
+map_included: true
 tags:
 - english
 - travel

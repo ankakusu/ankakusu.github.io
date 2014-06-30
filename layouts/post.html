@@ -2,11 +2,15 @@
 
 <div class="container-fluid">
 	<div class="row-fluid">
+		<% if @item[:map_included == true] %>
 		<div class="span4">
 			<div ng-controller="mapCtrl" class="map-container">
 				<div id="map-mini"> </div>
 			</div>
 		</div>
+		<%else %>
+			<div class="span2"></div>
+		<% end %>
 		<div class="span8">
 			<div id="post">
 				<div class="head">
