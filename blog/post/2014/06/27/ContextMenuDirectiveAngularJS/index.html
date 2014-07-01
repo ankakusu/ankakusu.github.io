@@ -76,23 +76,34 @@
 				  </div>
 				</div>
 				<div class="body" ng-controller="contentCtrl"> 
-					<p>I’ve been searching, reading blogs, books, watching videos about AngularJS directives. Finally, I feel ready to write a simple directive: Context Menu (right-click menu).</p>
+					<p>Directives are the building block of AngularJS. Up till now, I was an end user for directives. Beforehand, I had some small and unsuccessful trials. This time, I take my time to read blogs, books and watch videos and realized that there are several concepts to understand to fully comprehend directives. For me, the most important ones are linking, compiling, defining the scope of the directive and data binding. </p>
 
-<p>First of all, let’s decide on the behaviour of a context-menu? Hide &amp; show of an intially created div or append &amp; remove a dynamically created element? </p>
+<p><a href="http://www.youtube.com/watch?v=WqmeI5fZcho">This meetup record</a> by Misko Hevery, creator of AngularJS, explained all of those concepts clearly. About scopes, <a href="http://www.undefinednull.com/2014/02/11/mastering-the-scope-of-a-directive-in-angularjs/">this blog</a> should give you an idea. To understand the difference between text binding, one-way binding and two-way binding you shall refer to <a href="http://umur.io/angularjs-directives-using-isolated-scope-with-attributes/">this</a> blog. Nowadays, I’m reading this <a href="http://www.packtpub.com/AngularJS-directives/book">book</a> to gain a deeper understanding of AngularJS directives. After all those reading, I feel ready to write a simple directive: Context Menu (right-click menu).</p>
 
-<p>TL;DR, appending and removing items is the right approach. </p>
+<h3 id="best-approach-for-contextmenu">Best Approach for ContextMenu</h3>
 
-<p>Non TL;DR, first of all, in my specific case, I’m working on dynamically created SVG elements and dynamic contextmenu generation is an important feature for me. When I follow the hide &amp; show method whenever I leave the div to click an item of context menu, it disappeared. Please right click at the “Right Click On the Item!” text given in the sample below:</p>
+<p>Let’s decide the behaviour of a context-menu. To design it, should I hide &amp; show of an intially created div or append &amp; remove a dynamically created element? I tried both and append &amp; remove approach seemed to be the best one.</p>
+
+<h4 id="hide--show-approach">Hide &amp; Show Approach</h4>
+
+<p>In hide &amp; show approach, since the context menu is not a child of the clicked item, hiding context menu on mouseleave will prevent you from going into menu and when you try it will will disappear.
+You shall try at the JSFiddle below:</p>
 
 <iframe width="100%" height="300" src="http://jsfiddle.net/yaprak/76aR9/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-<p>In my trial and errors, I eliminated the first method and continued with this better one(in my opinion):</p>
+<h4 id="append--remove-approach">Append &amp; Remove Approach</h4>
 
-<p>In this approached, I defined an string at the scope, which defines the HTML for a contextmenu (<code>$scope.myContextDiv</code>) and passed this string to my <code>contextMenu</code> directive. While linking my function, I appended the context menu to the right-clicked element.</p>
+<p>In this approached, the <code>$scope.myContextDiv</code> parameter defines the HTML of context menu. This parameter is sent to <code>contextMenu</code> directive. Context menu is linked to the right clicked element on right click. Note that, since context menu is dynamically appended to the element, it has to be <a href="https://docs.angularjs.org/api/ng/service/$compile"><code>$compile</code></a>)d first. </p>
 
-<p>JS Fiddle:</p>
+<p>In the directive, we shall get the context menu by <code>lScope.myContextDiv</code> or if we write this way <code>lScope[ lAttr.contextMenu ])(lScope)</code>, the directive becomes independent of parameter names.</p>
+
+<p>If you want to check the click elements of context menu items, please open the developer console of you browser. When you click at item1 or item2, you can see the console output.</p>
+
+<p>The JS Fiddle of this directive is given as follows:</p>
 
 <iframe width="100%" height="300" src="http://jsfiddle.net/yaprak/5Lk2V/14/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>Please, note that this shall not be the best way to develop a context menu with AngularJS. If you have suggestions for a better one, please do not hesitate to contact with me.</p>
 
 
 			      <div id="disqus_thread"></div>
