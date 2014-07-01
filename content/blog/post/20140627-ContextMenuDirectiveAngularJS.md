@@ -29,7 +29,7 @@ You shall try at the JSFiddle below:
 
 #### Append & Remove Approach
 
-In this approached, the `$scope.myContextDiv` parameter defines the HTML of context menu. This parameter is sent to `contextMenu` directive. Context menu is linked to the right clicked element on right click. Note that, since context menu is dynamically appended to the element, it has to be [`$compile`](https://docs.angularjs.org/api/ng/service/$compile))d first. 
+In this approached, the `$scope.myContextDiv` parameter defines the HTML of context menu. This parameter is sent to `contextMenu` directive. Context menu is linked to the right clicked element on right click. Note that, since context menu is dynamically appended to the element, it has to be [`$compile`](https://docs.angularjs.org/api/ng/service/$compile)d first. 
 
 In the directive, we shall get the context menu by `lScope.myContextDiv` or if we write this way `lScope[ lAttr.contextMenu ])(lScope)`, the directive becomes independent of parameter names.
 
