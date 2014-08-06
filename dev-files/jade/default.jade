@@ -1,0 +1,46 @@
+!{html}
+doctype html
+html(lang='en')
+head
+  meta(charset='utf-8')
+  title Yaprak Ayazoglu Personal Web Page - <%= @item[:title] %>
+
+  link(rel='stylesheet', href='/css/reset.css')
+  link(rel='stylesheet', href='/css/font-awesome.css')
+  link(href='http://fonts.googleapis.com/css?family=Audiowide&subset=latin,latin-ext' rel='stylesheet' type='text/css')
+  link(rel='stylesheet', href='/css/style.css')
+
+
+  script(type="text/javascript" src="/lib/jquery.min.js")
+  script(type="text/javascript" src="/lib/angular.min.js")
+  script(type="text/javascript" src="/lib/angular-ui-router.min.js")
+  script(type="text/javascript" src="/lib/d3.min.js")
+  script(type="text/javascript" src="/scripts/app.js")
+  script(type="text/javascript" src="/scripts/svgDirective.js")
+  script(type="text/javascript" src="/scripts/blog.js")
+
+body(ng-app="yaprak")
+  #opacity.main
+  #header(ng-controller="MainCtrl")
+    div.header-container.grid
+      nav.s-8(id="nav-main")
+        a(ng-class="{active: isActive('/')}" ui-sref="home") Home
+        a(ng-class="{active: isActive('/projects')}" ui-sref="projects") Projects
+        a(ng-class="{active: isActive('/education')}" ui-sref="education") Education
+        a(ng-class="{active: isActive('/blog')}" ui-sref="blog") Blog
+  #content
+    div.content-container.grid
+        div.content-main.s-8.o-2 
+          div(ui-view)
+  #footer
+    div.footer-container.grid 
+      div.s-5 
+        nav
+          a.icons(href="mailto:yaprak.ayazoglu@gmail.com")
+            i.fa.fa-envelope(aria-hidden="true")
+          a.icons(href="https://github.com/ankakusu")
+            i.fa.fa-github(aria-hidden="true")
+          a.icons(href="https://www.linkedin.com/pub/yaprak-ayazoglu/12/701/a7")
+            i.fa.fa-linkedin(aria-hidden="true")
+
+
