@@ -1,3 +1,6 @@
 output
 crash.log
 tmp
+
+dev-files/.sass-cache
+.idea
