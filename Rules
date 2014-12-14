@@ -17,6 +17,7 @@ compile %r{^/blog/post} do
   unless item.binary?
     filter :erb
     filter :kramdown if item[:extension] == "md"
+    filter :colorize_syntax, :default_colorizer => :pygmentsrb
     layout "post"
   end
 end

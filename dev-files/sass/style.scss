@@ -6,13 +6,25 @@
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
 
+@import "code";
+
+// variables
+$font-size-base:        14px;
+
+$font-size-h1:          floor(($font-size-base * 2.6));  // ~36px
+$font-size-h2:          floor(($font-size-base * 1.75)); // ~24px
+$font-size-h3:          ceil(($font-size-base * 1.25));  // ~18px
+$font-size-h4:          ceil(($font-size-base * 1.25));  // ~18px
+
+$font-family: 'oxygen', sans-serif;
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'oxygen', sans-serif;
+  font-family: $font-family;
   font-size: 1.5em;
 	font-weight: 300;
 	line-height: 1.75;
@@ -23,6 +35,39 @@ body {
 	iframe{
 		margin-bottom: 1em;
 	}
+}
+
+h1, h2, h3, h4{
+  font-family: 'Roboto Slab' , 'oxygen', sans-serif;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  line-height: 40px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: $font-size-h2;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: $font-size-h3;
+  line-height: 20px;
+}
+
+h4 {
+  font-size: $font-size-h4;
+  line-height: 20px;
+}
+
+ul {
+  list-style: circle;
+  li{
+    margin-left: 20px;
+  }
 }
 
 #header{
