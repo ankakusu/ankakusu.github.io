@@ -13,36 +13,19 @@ noscript
   | end
   | %>
 
-#blog
-  //article.blog-post
-    div.s-3.alpha
-      div.blog-date-sec
-        h3 01
-        span Aug 2014
-    div.s-6
-      h3 Header
-      div.blog-metadata
-        h6.blog-author Author
-        h6.blog-category Category
-      div Share
-      p.body Summary
-      p 
-        a Read More
-    hr.vertical-space1
-
-
-  | <% sorted_articles.each do |article| %>
-  article.blog-post
-    div.s-3.alpha
-      div.blog-date-sec
-        h3 <%= Time.parse(article[:created_at]).strftime("%d") %>
-        span <%= Time.parse(article[:created_at]).strftime("%^b %Y") %>
-    div.s-8
-      h3 
-        a(ui-sref!= "post({'year': '<%= getItem(article.path, 3) %>', 'month': '<%= getItem(article.path, 4) %>', 'day': '<%= getItem(article.path, 5) %>', 'title': '<%= getItem(article.path, 6) %>' } )") <%= article[:title] %>
-        // <%= link_to(article[:title], article.path) %>
-      div.body <%= article_summary( article ) %>
-    hr.vertical-space1
-  | <% end %>
+#blog.row
+    | <% sorted_articles.each do |article| %>
+    article.blog-post
+      div.col-md-3.col-sm-3
+        div.blog-date-sec
+          h3 <%= Time.parse(article[:created_at]).strftime("%d") %>
+          span <%= Time.parse(article[:created_at]).strftime("%^b %Y") %>
+      div.col-md-8.col-sm-8.col-xs-10
+        div.blog-content
+          h3
+            a(ui-sref!= "post({'year': '<%= getItem(article.path, 3) %>', 'month': '<%= getItem(article.path, 4) %>', 'day': '<%= getItem(article.path, 5) %>', 'title': '<%= getItem(article.path, 6) %>' } )") <%= article[:title] %>
+            // <%= link_to(article[:title], article.path) %>
+          div.body <%= article_summary( article ) %>
+    | <% end %>
 
 

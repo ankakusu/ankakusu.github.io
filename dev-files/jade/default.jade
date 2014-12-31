@@ -30,26 +30,25 @@ body(ng-app="yaprak")
     ga('send', 'pageview');
   
   #opacity.main
-  #header(ng-controller="MainCtrl")
-    div.header-container.grid
-      nav.s-8(id="nav-main")
+  #header.row(ng-controller="MainCtrl")
+    div.header-container.col-md-6.col-md-offset-3
+      nav.nav-main
         a(ng-class="{active: isActive('/')}" ui-sref="home") Home
         a(ng-class="{active: isActive('/projects')}" ui-sref="projects") Projects
         a(ng-class="{active: isActive('/education')}" ui-sref="education") Education
         a(ng-class="{active: isActive('/blog')}" ui-sref="blog") Blog
   #content
-    div.content-container.grid
-        div.content-main.s-8.o-2
+    div.content-container.row
+        div.content-main.col-md-8.col-md-offset-2
           div(ui-view)
   #footer
-    div.footer-container.grid 
-      div.s-5 
-        nav
-          a.icons(href="mailto:yaprak.ayazoglu@gmail.com")
-            i.fa.fa-envelope(aria-hidden="true")
-          a.icons(href="https://github.com/ankakusu")
-            i.fa.fa-github(aria-hidden="true")
-          a.icons(href="https://www.linkedin.com/pub/yaprak-ayazoglu/12/701/a7")
-            i.fa.fa-linkedin(aria-hidden="true")
+    div.footer-container.text-center
+      nav
+        a.icons(href="mailto:yaprak.ayazoglu@gmail.com")
+          i.fa.fa-envelope(aria-hidden="true")
+        a.icons(href="https://github.com/ankakusu")
+          i.fa.fa-github(aria-hidden="true")
+        a.icons(href="https://www.linkedin.com/pub/yaprak-ayazoglu/12/701/a7")
+          i.fa.fa-linkedin(aria-hidden="true")
 
 
