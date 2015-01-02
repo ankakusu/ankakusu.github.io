@@ -21,9 +21,9 @@ in the right most of the input field.
 If you test your code in desktop browsers, the support may be problematic with some of the browsers. For instance, 
 when you create a search input box 
 like: `<input type="search">`, a reset text button will appear automatically in browsers such as Opera, Safari and Chrome.
-Unfortunately, Firefox Mozilla does not a have support for it. Thus, either you might want the reset button for input of 
-type="search" to appear in all browsers, or you might want to design your own fancy reset button, you will learn how to
-do it in this blog post. Believe me, it is not as easy as it seems.
+Unfortunately, not for Firefox Mozilla. Thus, either you might want the reset button for input of 
+type="search" to appear in all browsers, or you might want to design your own fancy one, you will learn how to
+do it in this blog post. Believe me, it is not as easy as it seems so.
 
 <!--MORE-->
 
@@ -81,7 +81,8 @@ you will encounter the focusout event problem for the input field.
         transform: translateY(-50%);
         -webkit-transform: translateY(-50%);
         color: dimgray; /* Define the text color */
-        padding: 9px 9px; /* Define padding to make the icon more bigger */
+        width: 22px;
+        height: 22px;
     }
     
     .my-icon.my-icon-search {
@@ -174,12 +175,15 @@ you will encounter the focusout event problem for the input field.
  
 ## What is the intended behaviour & solution?
 
-I do not want my input box to shrunk when I click on the reset button. It may shrunk only when I 
-click some place other than the input box container. To solve this problem, somehow, the clicked
-item should be detected. The relatedTarget field of the JQuery event, indicates us the DOM element
-that throws the focusout event. To detect the source of the event, I can check the class names of it.
-If you get the focus of the remove button, it is inevitable to control the focus out event of this 
-button as well, as shown below.
+Obviously, it should not shrunk when reset button or click and be free to shrunk when somewhere outside of the 
+searchbox is clicked.
+
+
+To solve this problem, I think of detecting the item that is clicked. The `relatedTarget` of JQuery event comes 
+in handy here. So, on click, if the classes of the element not matching with the sub elements of search box 
+container, shrunk it. If not, keep it as is. Here is code: 
+
+
 
     #!javascript
     // Focus out event of search input box
@@ -204,9 +208,13 @@ button as well, as shown below.
     });
 
 
-With the focus out events given above will prevent the unwanted behaviour such as 
-1) Shrinking of the input field when the the reset button is clicked,
-2) Still behavior after clicking the reset button and then clicking somewhere else(other than the input field box) 
+## Summary
+
+With the focus out events given above will prevent the unwanted behaviour such as
+
+The unwanted behavior for search box component will be prevented by conditionally shrinking the search box. Thus, 1) it
+will not shrink when the the reset button is clicked, and 2) it remains still when clicking the reset button and 
+then clicking somewhere else. 
 
 Go play with the working solution in Chrome, Mozilla, Opera or Safari. :)
 
@@ -224,3 +232,6 @@ If you want to see the solution together with the codes, take a look at
 [this JSFiddle.](http://jsfiddle.net/yaprak/oaa1k4y2/)
 
 
+Next, I'm gonna provide a solution showing a neat way to create a search box as you can find in Apple.com's website.
+In the begining, there will be just a magnifier, and on click the input search box will open up.
+ 
