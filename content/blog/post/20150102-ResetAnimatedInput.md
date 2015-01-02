@@ -233,5 +233,5 @@ If you want to see the solution together with the codes, take a look at
 
 
 Next, I'm gonna provide a solution showing a neat way to create a search box as you can find in Apple.com's website.
-In the begining, there will be just a magnifier, and on click the input search box will open up.
+In the beginning, there will be just a magnifier, and on click the input search box will open up.
  
