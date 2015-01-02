@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7666252b-051c-4c4c-abec-c42f032b7f4c" name="Default" comment="Make the website more responsive">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/blog/post/20141211-ResetAnimatedInput.md" afterPath="$PROJECT_DIR$/content/blog/post/20141211-ResetAnimatedInput.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev-files/sass/style.scss" afterPath="$PROJECT_DIR$/dev-files/sass/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ankakusu.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,8 +70,8 @@
       <file leaf-file-name="20141211-ResetAnimatedInput.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/content/blog/post/20141211-ResetAnimatedInput.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8803828" vertical-offset="2973" max-vertical-offset="3630">
-              <caret line="235" column="1" selection-start-line="235" selection-start-column="1" selection-end-line="235" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.04784689" vertical-offset="0" max-vertical-offset="3645">
+              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -899,8 +897,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/content/blog/post/20141211-ResetAnimatedInput.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8803828" vertical-offset="2973" max-vertical-offset="3630">
-          <caret line="235" column="1" selection-start-line="235" selection-start-column="1" selection-end-line="235" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.04784689" vertical-offset="0" max-vertical-offset="3645">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
           <folding />
         </state>
       </provider>

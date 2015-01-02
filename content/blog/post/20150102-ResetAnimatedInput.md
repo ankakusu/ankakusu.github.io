@@ -1,6 +1,6 @@
 ---
 kind: article
-created_at: 2014-12-11 11:34 CET
+created_at: 2015-01-02 11:34 CET
 title: Resetting an animated search input box without loosing the focus
 map_included: false
 tags:
