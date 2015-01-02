@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="/css/font-awesome.css">
   <link href="http://fonts.googleapis.com/css?family=Audiowide&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js">
   <script type="text/javascript" src="/lib/jquery.min.js"></script>
   <script type="text/javascript" src="/lib/angular.min.js"></script>
   <script type="text/javascript" src="/lib/angular-ui-router.min.js"></script>
@@ -28,23 +27,21 @@
     
   </script>
   <div id="opacity" class="main"></div>
-  <div id="header" ng-controller="MainCtrl">
-    <div class="header-container grid">
-      <nav id="nav-main" class="s-8"><a ng-class="{active: isActive('/')}" ui-sref="home">Home</a><a ng-class="{active: isActive('/projects')}" ui-sref="projects">Projects</a><a ng-class="{active: isActive('/education')}" ui-sref="education">Education</a><a ng-class="{active: isActive('/blog')}" ui-sref="blog">Blog</a></nav>
+  <div id="header" ng-controller="MainCtrl" class="row">
+    <div class="header-container col-md-6 col-md-offset-3">
+      <nav class="nav-main"><a ng-class="{active: isActive('/')}" ui-sref="home">Home</a><a ng-class="{active: isActive('/projects')}" ui-sref="projects">Projects</a><a ng-class="{active: isActive('/education')}" ui-sref="education">Education</a><a ng-class="{active: isActive('/blog')}" ui-sref="blog">Blog</a></nav>
     </div>
   </div>
   <div id="content">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+    <div class="content-container row">
+      <div class="content-main col-md-8 col-md-offset-2">
         <div ui-view></div>
       </div>
     </div>
   </div>
   <div id="footer">
-    <div class="footer-container grid">
-      <div class="s-5">
-        <nav><a href="mailto:yaprak.ayazoglu@gmail.com" class="icons"><i aria-hidden="true" class="fa fa-envelope"></i></a><a href="https://github.com/ankakusu" class="icons"><i aria-hidden="true" class="fa fa-github"></i></a><a href="https://www.linkedin.com/pub/yaprak-ayazoglu/12/701/a7" class="icons"><i aria-hidden="true" class="fa fa-linkedin"></i></a></nav>
-      </div>
+    <div class="footer-container text-center">
+      <nav><a href="mailto:yaprak.ayazoglu@gmail.com" class="icons"><i aria-hidden="true" class="fa fa-envelope"></i></a><a href="https://github.com/ankakusu" class="icons"><i aria-hidden="true" class="fa fa-github"></i></a><a href="https://www.linkedin.com/pub/yaprak-ayazoglu/12/701/a7" class="icons"><i aria-hidden="true" class="fa fa-linkedin"></i></a></nav>
     </div>
   </div>
 </body>

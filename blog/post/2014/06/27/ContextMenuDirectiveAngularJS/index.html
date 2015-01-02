@@ -1,6 +1,6 @@
 
 <div id="post-container"> 
-	<div class="title"> ContextMenu with AngularJS Directives </div>
+	<h1 class="title"> ContextMenu with AngularJS Directives </h1>
 					<div class="subtitle"> posted at
 				    June 27, 2014 
 					 </div>
@@ -38,7 +38,7 @@ You shall try at the JSFiddle below:</p>
 
 <h4 id="append--remove-approach">Append &amp; Remove Approach</h4>
 
-<p>In this approached, the <code>$scope.myContextDiv</code> parameter defines the HTML of context menu. This parameter is sent to <code>contextMenu</code> directive. Context menu is linked to the right clicked element on right click. Note that, since context menu is dynamically appended to the element, it has to be <a href="https://docs.angularjs.org/api/ng/service/$compile"><code>$compile</code></a>d first. </p>
+<p>In this approached, the <code>$scope.myContextDiv</code> parameter defines the HTML of context menu. This parameter is sent to <code>contextMenu</code> directive. Context menu is linked to the right clicked element on right click. Note that, since context menu is dynamically appended to the element, it has to be <a href="https://docs.angularjs.org/api/ng/service/%24compile"><code>$compile</code></a>d first. </p>
 
 <p>In the directive, we shall get the context menu by <code>lScope.myContextDiv</code> or if we write this way <code>lScope[ lAttr.contextMenu ])(lScope)</code>, the directive becomes independent of parameter names.</p>
 

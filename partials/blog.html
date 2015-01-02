@@ -3,57 +3,72 @@
   
   
 </noscript>
-<div id="blog">
-  <!--article.blog-post
-  div.s-3.alpha
-    div.blog-date-sec
-      h3 01
-      span Aug 2014
-  div.s-6
-    h3 Header
-    div.blog-metadata
-      h6.blog-author Author
-      h6.blog-category Category
-    div Share
-    p.body Summary
-    p 
-      a Read More
-  hr.vertical-space1
-  
-  
-  -->
+<div id="blog" class="row">
   <article class="blog-post">
-    <div class="s-3 alpha">
+    <div class="col-md-3 col-sm-3">
+      <div class="blog-date-sec">
+        <h3>02</h3><span>JAN 2015</span>
+      </div>
+    </div>
+    <div class="col-md-8 col-sm-8 col-xs-10">
+      <div class="blog-content">
+        <h3><a ui-sref="post({'year': '2015', 'month': '01', 'day': '02', 'title': 'ResetAnimatedInput' } )">Resetting an animated search input box without loosing the focus</a>
+          <!-- <a href="/blog/post/2015/01/02/ResetAnimatedInput/">Resetting an animated search input box without loosing the focus</a>-->
+        </h3>
+        <div class="body">
+<p>With HTML5, new types such as text, search, tel, date, email etc. can be used to define the types of input forms. 
+This helps, especially, the mobile devices to show which type of keyboard when you click on that input field. 
+For instance, if you have an input box 
+defined as follows: <code>&lt;input type="date"&gt;</code>
+In your mobile device, when you click on this form, a date picker will reveal in response. Or, if you have an input
+box as <code>&lt;input type="search"&gt;</code>, when you text some data on the input box, automatically, a reset button will appear
+in the right most of the input field.</p>
+
+<p>If you test your code in desktop browsers, the support may be problematic with some of the browsers. For instance, 
+when you create a search input box 
+like: <code>&lt;input type="search"&gt;</code>, a reset text button will appear automatically in browsers such as Opera, Safari and Chrome.
+Unfortunately, not for Firefox Mozilla. Thus, either you might want the reset button for input of 
+type=”search” to appear in all browsers, or you might want to design your own fancy one, you will learn how to
+do it in this blog post. Believe me, it is not as easy as it seems so.</p>
+
+</div>
+      </div>
+    </div>
+  </article>
+  <article class="blog-post">
+    <div class="col-md-3 col-sm-3">
       <div class="blog-date-sec">
         <h3>27</h3><span>JUN 2014</span>
       </div>
     </div>
-    <div class="s-8">
-      <h3><a ui-sref="post({'year': '2014', 'month': '06', 'day': '27', 'title': 'ContextMenuDirectiveAngularJS' } )">ContextMenu with AngularJS Directives</a>
-        <!-- <a href="/blog/post/2014/06/27/ContextMenuDirectiveAngularJS/">ContextMenu with AngularJS Directives</a>-->
-      </h3>
-      <div class="body">
+    <div class="col-md-8 col-sm-8 col-xs-10">
+      <div class="blog-content">
+        <h3><a ui-sref="post({'year': '2014', 'month': '06', 'day': '27', 'title': 'ContextMenuDirectiveAngularJS' } )">ContextMenu with AngularJS Directives</a>
+          <!-- <a href="/blog/post/2014/06/27/ContextMenuDirectiveAngularJS/">ContextMenu with AngularJS Directives</a>-->
+        </h3>
+        <div class="body">
 <p>Directives are the building block of AngularJS. Up till now, I was an end user for directives. Beforehand, I had some small and unsuccessful trials. This time, I take my time to read blogs, books and watch videos and realized that there are several concepts to understand to fully comprehend directives. For me, the most important ones are linking, compiling, defining the scope of the directive and data binding. </p>
 
 </div>
+      </div>
     </div>
-    <hr class="vertical-space1"/>
   </article>
   <article class="blog-post">
-    <div class="s-3 alpha">
+    <div class="col-md-3 col-sm-3">
       <div class="blog-date-sec">
         <h3>25</h3><span>JAN 2014</span>
       </div>
     </div>
-    <div class="s-8">
-      <h3><a ui-sref="post({'year': '2014', 'month': '01', 'day': '25', 'title': 'CoffeeScriptBackboneJSEgitimi' } )">CoffeeScript ve BackboneJS Dolu Bir Haftasonu</a>
-        <!-- <a href="/blog/post/2014/01/25/CoffeeScriptBackboneJSEgitimi/">CoffeeScript ve BackboneJS Dolu Bir Haftasonu</a>-->
-      </h3>
-      <div class="body">
+    <div class="col-md-8 col-sm-8 col-xs-10">
+      <div class="blog-content">
+        <h3><a ui-sref="post({'year': '2014', 'month': '01', 'day': '25', 'title': 'CoffeeScriptBackboneJSEgitimi' } )">CoffeeScript ve BackboneJS Dolu Bir Haftasonu</a>
+          <!-- <a href="/blog/post/2014/01/25/CoffeeScriptBackboneJSEgitimi/">CoffeeScript ve BackboneJS Dolu Bir Haftasonu</a>-->
+        </h3>
+        <div class="body">
 <p>Aslında her şey bir tesadüf eseri başladı. Bütün haftasonunu kapsayan dolu dolu bir CoffeScript ve BackboneJS eğitimi olduğunu öğrendim. Nasıl öğrendiğimi hiç sormayın oldukça düşük bir olasılık. Yüce kozmoz bu eğitime katılmam için gerekli olan zincirleme olayları bilinçli olarak başlattı diye düşünüyorum :)</p>
 
 </div>
+      </div>
     </div>
-    <hr class="vertical-space1"/>
   </article>
 </div>
