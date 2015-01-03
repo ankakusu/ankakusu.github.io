@@ -1,7 +1,7 @@
 ---
 kind: article
 created_at: 2015-01-02 11:34 CET
-title: Resetting an animated search input box without loosing the focus
+title: Expandable search with reset button
 map_included: false
 tags:
   - english
