@@ -43,17 +43,8 @@ module.exports = (grunt)->
             dest: '../content/partials',
             ext: '.html'
           },
-          "../layouts/default.html": "jade/default.jade",
-          "../layouts/post.html": "jade/post.jade"
+          "../layouts/default.html": "jade/default.jade"
         ]
-          
-          #"../content/partials/home.html": "jade/partials/home.jade"
-      release: 
-        options: 
-          data: 
-            debug: false
-        files: 
-          "release.html": "test.jade"
 
     copy:
       main:

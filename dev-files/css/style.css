@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
 /**
  * Bootstrap assets
  */
@@ -293,7 +292,7 @@ html {
 /* line 27, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_scaffolding.scss */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.42857;
   color: #333333;
   background-color: #fff;
@@ -370,8 +369,8 @@ img {
 
 /* line 113, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_scaffolding.scss */
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 22px;
+  margin-bottom: 22px;
   border: 0;
   border-top: 1px solid #eeeeee;
 }
@@ -411,8 +410,8 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 20px;
-  font-size: 21px;
+  margin-bottom: 22px;
+  font-size: 24px;
   line-height: inherit;
   color: #333333;
   border: 0;
@@ -472,7 +471,7 @@ input[type="checkbox"]:focus {
 output {
   display: block;
   padding-top: 7px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.42857;
   color: #555555;
 }
@@ -481,9 +480,9 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 34px;
+  height: 36px;
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.42857;
   color: #555555;
   background-color: #fff;
@@ -539,7 +538,7 @@ input[type="search"] {
   input[type="time"],
   input[type="datetime-local"],
   input[type="month"] {
-    line-height: 34px;
+    line-height: 36px;
   }
 
   /* line 184, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
@@ -547,7 +546,7 @@ input[type="search"] {
   input[type="time"].input-sm,
   input[type="datetime-local"].input-sm,
   input[type="month"].input-sm {
-    line-height: 30px;
+    line-height: 33px;
   }
 
   /* line 190, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
@@ -555,7 +554,7 @@ input[type="search"] {
   input[type="time"].input-lg,
   input[type="datetime-local"].input-lg,
   input[type="month"].input-lg {
-    line-height: 46px;
+    line-height: 49px;
   }
 }
 /* line 204, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
@@ -574,7 +573,7 @@ input[type="search"] {
 /* line 220, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
 .radio label,
 .checkbox label {
-  min-height: 20px;
+  min-height: 22px;
   padding-left: 20px;
   margin-bottom: 0;
   font-weight: normal;
@@ -651,17 +650,17 @@ input[type="checkbox"] {
 
 /* line 71, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
 .input-sm, .form-group-sm .form-control {
-  height: 30px;
+  height: 33px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   border-radius: 3px;
 }
 
 /* line 79, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
 select.input-sm, .form-group-sm .form-control {
-  height: 30px;
-  line-height: 30px;
+  height: 33px;
+  line-height: 33px;
 }
 
 /* line 84, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
@@ -672,17 +671,17 @@ select[multiple].input-sm, .form-group-sm .form-control {
 
 /* line 71, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
 .input-lg, .form-group-lg .form-control {
-  height: 46px;
+  height: 49px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.33;
   border-radius: 6px;
 }
 
 /* line 79, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
 select.input-lg, .form-group-lg .form-control {
-  height: 46px;
-  line-height: 46px;
+  height: 49px;
+  line-height: 49px;
 }
 
 /* line 84, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
@@ -697,7 +696,7 @@ select[multiple].input-lg, .form-group-lg .form-control {
 }
 /* line 329, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
 .has-feedback .form-control {
-  padding-right: 42.5px;
+  padding-right: 45px;
 }
 
 /* line 334, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
@@ -707,25 +706,25 @@ select[multiple].input-lg, .form-group-lg .form-control {
   right: 0;
   z-index: 2;
   display: block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
   text-align: center;
   pointer-events: none;
 }
 
 /* line 346, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
 .input-lg + .form-control-feedback {
-  width: 46px;
-  height: 46px;
-  line-height: 46px;
+  width: 49px;
+  height: 49px;
+  line-height: 49px;
 }
 
 /* line 351, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
 .input-sm + .form-control-feedback {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
+  width: 33px;
+  height: 33px;
+  line-height: 33px;
 }
 
 /* line 8, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/_forms.scss */
@@ -826,7 +825,7 @@ select[multiple].input-lg, .form-group-lg .form-control {
 
 /* line 371, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
 .has-feedback label ~ .form-control-feedback {
-  top: 25px;
+  top: 27px;
 }
 /* line 374, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
 .has-feedback label.sr-only ~ .form-control-feedback {
@@ -915,7 +914,7 @@ select[multiple].input-lg, .form-group-lg .form-control {
 /* line 502, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
 .form-horizontal .radio,
 .form-horizontal .checkbox {
-  min-height: 27px;
+  min-height: 29px;
 }
 /* line 508, ../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_forms.scss */
 .form-horizontal .form-group {
@@ -2392,65 +2391,67 @@ code .il {
   font-weight: bold;
 }
 
-/* line 37, ../sass/style.scss */
+/* line 35, ../sass/style.scss */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* line 42, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
 body {
   font-family: "oxygen", sans-serif;
   font-size: 18px;
   line-height: 1.75;
 }
-/* line 46, ../sass/style.scss */
+/* line 44, ../sass/style.scss */
 body a {
   text-decoration: none;
   color: rgba(110, 96, 134, 0.63);
 }
-/* line 50, ../sass/style.scss */
+/* line 48, ../sass/style.scss */
 body iframe {
   margin-bottom: 1em;
 }
 
-/* line 55, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 h1, h2, #header .header-container .nav-main > a, h3, h4 {
-  font-family: 'Roboto Slab' , 'oxygen', sans-serif;
+  font-family: 'oxygen', sans-serif;
+  color: #424242;
 }
 
-/* line 59, ../sass/style.scss */
+/* line 58, ../sass/style.scss */
 h1 {
-  font-size: 36px;
+  font-size: 41px;
   line-height: 40px;
   margin-top: 0;
   margin-bottom: 1em;
 }
 
-/* line 66, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 h2, #header .header-container .nav-main > a {
-  font-size: 24px;
+  font-size: 28px;
   line-height: 1.25;
   margin-bottom: 1em;
 }
 
-/* line 72, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 h3 {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 20px;
   margin-bottom: 1em;
 }
 
-/* line 78, ../sass/style.scss */
+/* line 77, ../sass/style.scss */
 h4 {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 20px;
   margin-bottom: 1em;
 }
 
-/* line 84, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 p {
   line-height: 1.3;
+  font-size: 16px;
 }
 
 /* line 88, ../sass/style.scss */
@@ -2460,21 +2461,22 @@ ul {
 /* line 90, ../sass/style.scss */
 ul li {
   margin-left: 20px;
+  font-size: 16px;
 }
 
-/* line 97, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
 #header .header-container > span {
   text-decoration: none;
   position: absolute;
   display: inline-block;
   text-transform: capitalize;
 }
-/* line 103, ../sass/style.scss */
+/* line 104, ../sass/style.scss */
 #header .header-container .nav-main {
   display: inline-block;
   text-align: right;
 }
-/* line 106, ../sass/style.scss */
+/* line 107, ../sass/style.scss */
 #header .header-container .nav-main > a {
   text-decoration: none;
   position: relative;
@@ -2484,12 +2486,12 @@ ul li {
   text-transform: capitalize;
   color: rgba(110, 96, 134, 0.63);
 }
-/* line 115, ../sass/style.scss */
+/* line 116, ../sass/style.scss */
 #header .header-container .nav-main > a.active {
   border-top: 3px solid #536145;
 }
 
-/* line 123, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 .main {
   position: fixed;
   background-image: url(/img/main-page.jpg);
@@ -2502,13 +2504,13 @@ ul li {
   width: 100%;
   height: 100%;
 }
-/* line 133, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
 .main#opacity {
   opacity: 0.6;
   filter: alpha(opacity=60);
 }
 
-/* line 138, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .info-menu {
   z-index: 900;
   position: absolute;
@@ -2523,55 +2525,56 @@ ul li {
   padding-left: 1em;
   line-height: 1em;
 }
-/* line 149, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 .info-menu .sub-header {
   font-weight: 500;
 }
-/* line 153, ../sass/style.scss */
+/* line 154, ../sass/style.scss */
 .info-menu .info-item {
   width: 500px;
   padding-top: 0.6em;
 }
-/* line 158, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 .info-menu .info-header {
   text-transform: uppercase;
   font-size: 1em;
   font-weight: bold;
   border-bottom: 1px solid gray;
 }
-/* line 164, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 .info-menu a {
   text-transform: uppercase;
   color: rgba(31, 99, 138, 0.7);
   text-decoration: none;
 }
-/* line 169, ../sass/style.scss */
+/* line 170, ../sass/style.scss */
 .info-menu li {
   padding-left: 1em;
   padding-top: 0.4em;
 }
-/* line 172, ../sass/style.scss */
+/* line 173, ../sass/style.scss */
 .info-menu li:before {
   font-family: 'FontAwesome';
   content: '\f0fc';
   margin: 0 5px 0 -15px;
 }
 
-/* line 180, ../sass/style.scss */
+/* line 181, ../sass/style.scss */
 #content {
+  color: #424242;
   padding-top: 1em;
 }
-/* line 183, ../sass/style.scss */
+/* line 185, ../sass/style.scss */
 #content .content-container .content-main {
   display: inline-block;
   font-size: 0.7em;
   line-height: 2.4;
 }
-/* line 190, ../sass/style.scss */
+/* line 192, ../sass/style.scss */
 #content .content-container .content-sidebar {
   display: inline-block;
 }
-/* line 192, ../sass/style.scss */
+/* line 194, ../sass/style.scss */
 #content .content-container .content-sidebar img {
   width: auto;
   height: auto;
@@ -2579,7 +2582,7 @@ ul li {
   vertical-align: bottom;
   border: 0;
 }
-/* line 203, ../sass/style.scss */
+/* line 205, ../sass/style.scss */
 #content .info .title {
   font-family: 'Audiowide', cursive;
   font-size: 300%;
@@ -2590,27 +2593,27 @@ ul li {
   -o-transform: rotate(8deg);
   transform: rotate(8deg);
 }
-/* line 210, ../sass/style.scss */
+/* line 212, ../sass/style.scss */
 #content .info a {
   text-decoration: none;
 }
-/* line 213, ../sass/style.scss */
+/* line 215, ../sass/style.scss */
 #content .info p {
   padding-left: 1em;
   margin-top: 1em;
 }
-/* line 217, ../sass/style.scss */
+/* line 219, ../sass/style.scss */
 #content .info #P {
   margin-bottom: 1ex;
 }
-/* line 220, ../sass/style.scss */
+/* line 222, ../sass/style.scss */
 #content .info #w {
   width: 100%;
   margin: 0 auto 1em;
   padding: 0 1%;
   overflow: hidden;
 }
-/* line 226, ../sass/style.scss */
+/* line 228, ../sass/style.scss */
 #content .info .wordcloud {
   width: 828px;
   height: 414px;
@@ -2621,7 +2624,7 @@ ul li {
   overflow: hidden;
   cursor: default;
 }
-/* line 235, ../sass/style.scss */
+/* line 237, ../sass/style.scss */
 #content .info .wordcloud > .cloudword {
   position: absolute;
   margin: 0;
@@ -2631,12 +2634,12 @@ ul li {
   cursor: default;
   white-space: nowrap;
 }
-/* line 244, ../sass/style.scss */
+/* line 246, ../sass/style.scss */
 #content .info .wordcloud > .monospace {
   font-family: FreeMono,'Courier New',Courier,monospace;
 }
 
-/* line 251, ../sass/style.scss */
+/* line 253, ../sass/style.scss */
 #post-container {
   background-color: rgba(255, 255, 255, 0.8);
   -moz-border-radius: 5px;
@@ -2644,42 +2647,42 @@ ul li {
   border-radius: 5px;
   padding: 1em;
 }
-/* line 255, ../sass/style.scss */
+/* line 257, ../sass/style.scss */
 #post-container .title {
   text-align: center;
 }
-/* line 258, ../sass/style.scss */
+/* line 260, ../sass/style.scss */
 #post-container .subtitle {
   font-weight: bold;
 }
-/* line 261, ../sass/style.scss */
+/* line 263, ../sass/style.scss */
 #post-container .share {
   margin-bottom: 2.5em;
 }
-/* line 264, ../sass/style.scss */
+/* line 266, ../sass/style.scss */
 #post-container .post-content {
   line-height: 2em;
 }
-/* line 266, ../sass/style.scss */
+/* line 268, ../sass/style.scss */
 #post-container .post-content a {
   color: rgba(110, 96, 134, 0.85);
 }
-/* line 269, ../sass/style.scss */
+/* line 271, ../sass/style.scss */
 #post-container .post-content p {
   margin-bottom: 1em;
 }
-/* line 272, ../sass/style.scss */
+/* line 274, ../sass/style.scss */
 #post-container .post-content h3 {
   color: rgba(46, 55, 61, 0.99);
   margin-bottom: 8px;
 }
-/* line 276, ../sass/style.scss */
+/* line 278, ../sass/style.scss */
 #post-container .post-content h4 {
   color: rgba(46, 55, 61, 0.99);
   margin-bottom: 8px;
 }
 
-/* line 283, ../sass/style.scss */
+/* line 285, ../sass/style.scss */
 #blog {
   margin-top: 5em;
   background-color: rgba(255, 255, 255, 0.5);
@@ -2689,16 +2692,17 @@ ul li {
   padding-top: 0.5em;
 }
 @media (max-width: 768px) {
-  /* line 283, ../sass/style.scss */
+  /* line 285, ../sass/style.scss */
   #blog {
     text-align: center;
+    padding-left: 10px;
   }
 }
-/* line 291, ../sass/style.scss */
+/* line 294, ../sass/style.scss */
 #blog .blog-post {
   margin-bottom: 1em;
 }
-/* line 294, ../sass/style.scss */
+/* line 297, ../sass/style.scss */
 #blog .blog-post .vertical-space {
   border-color: #E5E5E5;
   border-image: none;
@@ -2709,7 +2713,7 @@ ul li {
   margin: 14px 0 35px;
   width: auto;
 }
-/* line 304, ../sass/style.scss */
+/* line 307, ../sass/style.scss */
 #blog .blog-post .body {
   display: inline-block;
   color: #424242;
@@ -2719,28 +2723,28 @@ ul li {
   margin: 0 0 20px;
   text-align: justify;
 }
-/* line 315, ../sass/style.scss */
+/* line 318, ../sass/style.scss */
 #blog .blog-post h3 {
   color: rgba(46, 55, 61, 0.99);
   margin-bottom: 8px;
   font-weight: 400;
   line-height: 38px;
 }
-/* line 321, ../sass/style.scss */
+/* line 324, ../sass/style.scss */
 #blog .blog-post .blog-metadata {
   margin-bottom: 20px;
   letter-spacing: -0.03em;
   color: #a8b1b4;
 }
-/* line 325, ../sass/style.scss */
+/* line 328, ../sass/style.scss */
 #blog .blog-post .blog-metadata .blog-author {
   display: inline;
 }
-/* line 329, ../sass/style.scss */
+/* line 332, ../sass/style.scss */
 #blog .blog-post .blog-metadata .blog-category {
   display: inline;
 }
-/* line 334, ../sass/style.scss */
+/* line 337, ../sass/style.scss */
 #blog .blog-post .blog-date-sec {
   font: 14px/22px 'Roboto Slab',Trebuchet MS,Helvetica,Arial,serif;
   color: #555;
@@ -2751,12 +2755,12 @@ ul li {
   letter-spacing: 2px;
 }
 @media (max-width: 768px) {
-  /* line 334, ../sass/style.scss */
+  /* line 337, ../sass/style.scss */
   #blog .blog-post .blog-date-sec {
     display: none;
   }
 }
-/* line 345, ../sass/style.scss */
+/* line 348, ../sass/style.scss */
 #blog .blog-post .blog-date-sec h3 {
   color: #555;
   font-weight: 300;
@@ -2765,7 +2769,7 @@ ul li {
   margin: 0;
   letter-spacing: 4px;
 }
-/* line 353, ../sass/style.scss */
+/* line 356, ../sass/style.scss */
 #blog .blog-post .blog-date-sec span {
   display: block;
   font-weight: 300;
@@ -2773,15 +2777,15 @@ ul li {
   margin-top: 8px;
 }
 
-/* line 364, ../sass/style.scss */
+/* line 367, ../sass/style.scss */
 #footer {
   text-align: center;
 }
-/* line 367, ../sass/style.scss */
+/* line 370, ../sass/style.scss */
 #footer .footer-container {
   padding-top: 0.5em;
 }
-/* line 370, ../sass/style.scss */
+/* line 373, ../sass/style.scss */
 #footer .footer-container nav > a {
   padding-left: 1em;
   padding-right: 1em;
@@ -2793,121 +2797,121 @@ ul li {
   text-align: center;
   color: #333;
 }
-/* line 381, ../sass/style.scss */
+/* line 384, ../sass/style.scss */
 #footer .footer-container nav > a.icons {
   opacity: 0.6;
   filter: alpha(opacity=60);
 }
 
-/* line 390, ../sass/style.scss */
+/* line 393, ../sass/style.scss */
 table td {
   padding: 0.5em;
 }
 
-/* line 395, ../sass/style.scss */
+/* line 398, ../sass/style.scss */
 .grid {
   position: relative;
   float: left;
   width: 102.5%;
   margin-left: -2.5%;
 }
-/* line 401, ../sass/style.scss */
+/* line 404, ../sass/style.scss */
 .grid:after {
   clear: both;
 }
-/* line 404, ../sass/style.scss */
+/* line 407, ../sass/style.scss */
 .grid:before, .grid:after {
   content: "";
   display: table;
 }
-/* line 408, ../sass/style.scss */
+/* line 411, ../sass/style.scss */
 .grid .s-1 {
   width: 8.3%;
   display: inline-block;
 }
-/* line 412, ../sass/style.scss */
+/* line 415, ../sass/style.scss */
 .grid .s-2 {
   width: 16%;
   display: inline-block;
 }
-/* line 416, ../sass/style.scss */
+/* line 419, ../sass/style.scss */
 .grid .s-3 {
   width: 24%;
   display: inline-block;
 }
-/* line 420, ../sass/style.scss */
+/* line 423, ../sass/style.scss */
 .grid .s-4 {
   width: 33.3%;
   display: inline-block;
 }
-/* line 424, ../sass/style.scss */
+/* line 427, ../sass/style.scss */
 .grid .s-5 {
   width: 41.6%;
   display: inline-block;
 }
-/* line 428, ../sass/style.scss */
+/* line 431, ../sass/style.scss */
 .grid .s-6 {
   width: 48%;
   display: inline-block;
 }
-/* line 432, ../sass/style.scss */
+/* line 435, ../sass/style.scss */
 .grid .s-7 {
   width: 52.6%;
   display: inline-block;
 }
-/* line 436, ../sass/style.scss */
+/* line 439, ../sass/style.scss */
 .grid .s-8 {
   width: 66.66%;
   display: inline-block;
 }
-/* line 441, ../sass/style.scss */
+/* line 444, ../sass/style.scss */
 .grid .o-1 {
   padding-left: 8.3%;
 }
-/* line 444, ../sass/style.scss */
+/* line 447, ../sass/style.scss */
 .grid .o-2 {
   padding-left: 16%;
 }
-/* line 447, ../sass/style.scss */
+/* line 450, ../sass/style.scss */
 .grid .o-3 {
   padding-left: 24%;
 }
-/* line 450, ../sass/style.scss */
+/* line 453, ../sass/style.scss */
 .grid .o-4 {
   padding-left: 33.3%;
 }
-/* line 453, ../sass/style.scss */
+/* line 456, ../sass/style.scss */
 .grid .o-5 {
   padding-left: 41.6%;
 }
-/* line 456, ../sass/style.scss */
+/* line 459, ../sass/style.scss */
 .grid .o-6 {
   padding-left: 48%;
 }
-/* line 459, ../sass/style.scss */
+/* line 462, ../sass/style.scss */
 .grid .o-7 {
   padding-left: 52.6%;
 }
-/* line 462, ../sass/style.scss */
+/* line 465, ../sass/style.scss */
 .grid .o-8 {
   padding-left: 66.66%;
 }
 
-/* line 468, ../sass/style.scss */
+/* line 471, ../sass/style.scss */
 .node rect {
   cursor: pointer;
   stroke: #3182bd;
   stroke-width: 1.5px;
 }
 
-/* line 474, ../sass/style.scss */
+/* line 477, ../sass/style.scss */
 .node text {
   font: 14px sans-serif;
   pointer-events: none;
   text-anchor: middle;
 }
 
-/* line 480, ../sass/style.scss */
+/* line 483, ../sass/style.scss */
 line.link {
   fill: none;
   stroke: #9ecae1;
