@@ -1,6 +1,6 @@
 
 <div id="post-container"> 
-	<h1 class="title"> Resetting an animated search input box without loosing the focus </h1>
+	<h1 class="title"> Expandable search with reset button </h1>
 					<div class="subtitle"> posted at
 				    January 2, 2015 
 					 </div>
@@ -19,61 +19,27 @@
 	</div>
 	<div class="post-content">
 		
-<p>With HTML5, new types such as text, search, tel, date, email etc. can be used to define the types of input forms. 
-This helps, especially, the mobile devices to show which type of keyboard when you click on that input field. 
-For instance, if you have an input box 
-defined as follows: <code>&lt;input type="date"&gt;</code>
-In your mobile device, when you click on this form, a date picker will reveal in response. Or, if you have an input
-box as <code>&lt;input type="search"&gt;</code>, when you text some data on the input box, automatically, a reset button will appear
-in the right most of the input field.</p>
-
-<p>If you test your code in desktop browsers, the support may be problematic with some of the browsers. For instance, 
-when you create a search input box 
-like: <code>&lt;input type="search"&gt;</code>, a reset text button will appear automatically in browsers such as Opera, Safari and Chrome.
-Unfortunately, not for Firefox Mozilla. Thus, either you might want the reset button for input of 
-type=”search” to appear in all browsers, or you might want to design your own fancy one, you will learn how to
-do it in this blog post. Believe me, it is not as easy as it seems so.</p>
+<p>HTML5 defines new input search types such as text, search, tel, date, email, etc. Mobile devices display the related 
+keyboard using this type. For instance, a <code>&lt;input type="date"&gt;</code> will reveal a date picker in your mobile device. 
+Or <code>&lt;input type="search"&gt;</code> shows a reset button at the right. However, for desktop browsers the support may be 
+problematic. For instance, in the case of <code>&lt;input type="search"&gt;</code>, reset button works fine in Opera, Safari, and Chrome but in 
+Firefox. Thus, either you want the reset button for all browsers, or you want to design your own fancy one, of which I will
+ demonstrate here.</p>
 
 <!--MORE-->
 
-<h2 id="expandable-searchbox-with-remove-button">Expandable Searchbox with Remove Button</h2>
-
-<p>If you want to device your own search input with a reset button, you need a component which includes an input search box, 
- a reset and a magnify button as given below: </p>
-
-<pre><code class="language-html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"search-container"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"search"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Text smt."</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"my-icon my-icon-search"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;&lt;/button&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"my-icon my-icon-remove"</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/span&gt;</span></code></pre>
-
-<p>If you had a fixed length search box, it was not a problem at all. However, if you had a dynamically changing width, 
-you will encounter the focusout event problem for the input field.</p>
-
-<h2 id="how-to-reproduce-the-problem">How to reproduce the problem:</h2>
-
-<ul>
-  <li>You have the input box given below : </li>
-</ul>
-
-<div class="defn" id="expandable-button">
-  <form method="post" action="/search">
-      <span class="search-container">
-          <input class="search" type="text" placeholder="Text smt.">
-          <button class="my-icon my-icon-search" type="submit"></button>
-          <input class="my-icon my-icon-remove" type="reset" value="">
-      </span>
-  </form>
-</div>
-
-<ul>
-  <li>When you text something inside, it expands.</li>
-  <li>When you want to reset your text inside the search box (by clicking the reset botton on the right), your input box throws a 
- focusout event and shrunk.</li>
-</ul>
-
 <style>
     #expandable-button{
+        display: inline-block;
+    }
+    
+    .defn-container {
+        text-align: center;
+        padding: 30px 10px;
+        font-size: 2em;
+    }
+    
+    .defn, .eg-expand {
         display: inline-block;
     }
     
@@ -111,16 +77,16 @@ you will encounter the focusout event problem for the input field.</p>
     
     input[type=text] {
         /* Give an initial width */
-        width: 100px;
+        width: 200px;
         /* Make the width changes more smooth */
         transition: width 1s ease;
         -webkit-transition: width 1s ease;
     
         /* Make the search box look fancy .*/
         display: block;
-        height: 34px;
+        height: 50px;
         padding: 3px 6px;
-        font-size: 14px;
+        font-size: 25px;
         line-height: 1.42857143;
         color: #555;
         background-color: #fff;
@@ -136,27 +102,50 @@ you will encounter the focusout event problem for the input field.</p>
     
         // If there is a text entered to the input box, reveal the remove button
         // else make keep it hidden.
-        function displayReset(that) {
+        function displayReset(that, elem) {
             // Test the length of the value of the input box
             var display = $(that).val().length > 0 ? "block" : "none";
-            $(".my-icon-remove").css("display", display);
+            $( elem + " .my-icon-remove").css("display", display);
         }
     
         // On focusin event, increase the width of the input box
-        $("input[type=text]").on("focusin", function(){
-            $("input[type=text]").css("width", "250px");
-            displayReset(this);
+        $(".defn input[type=text]").on("focusin", function(){
+            $(".defn input[type=text]").css("width", "350px");
+            displayReset(this, ".defn");
+        });
+        
+        
+        // On focusin event, increase the width of the input box
+        $(".eg-expand input[type=text]").on("focusin", function(){
+            $(".eg-expand input[type=text]").css("width", "350px");
+            $(".eg-expand .my-icon-remove").css("display", "block");
+        });
+        
+        // On focusin event, increase the width of the input box
+        $(".soln input[type=text]").on("focusin", function(){
+            $(".soln input[type=text]").css("width", "350px");
+            displayReset(this, ".soln");
         });
     
         // On keydown, check whether there is text in the input box or not
-        $("input[type=text]").on("keydown", function() {
-            displayReset(this);
+        $(".defn input[type=text]").on("keydown", function() {
+            displayReset(this, ".defn");
+        });
+        
+        $(".soln input[type=text]").on("keydown", function() {
+            displayReset(this, ".soln");
+        }); 
+            
+        // On focus out for defining the problem
+        $(".defn input[type=text]").on("focusout", function(event){
+            $(".defn input[type=text]").css("width", "200px");
+            $(".defn .my-icon-remove").css("display", "none");
         });
         
         // On focus out for defining the problem
-        $(".defn input[type=text]").on("focusout", function(event){
-            $("input[type=text]").css("width", "100px");
-            $(".my-icon-remove").css("display", "none");
+        $(".eg-expand input[type=text]").on("focusout", function(event){
+            $(".eg-expand input[type=text]").css("width", "200px");
+            $(".eg-expand .my-icon-remove").css("display", "none");
         });
     
         // On focus out search input text
@@ -165,8 +154,8 @@ you will encounter the focusout event problem for the input field.</p>
             // Unless there is "my-icon" class in the relatedTarget, update the width
             console.log(target);
             if ( !target.hasClass("my-icon") ) {
-                $("input[type=text]").css("width", "100px");
-                $(".my-icon-remove").css("display", "none");
+                $(".soln input[type=text]").css("width", "200px");
+                $(".soln .my-icon-remove").css("display", "none");
             }
         });
         
@@ -176,8 +165,8 @@ you will encounter the focusout event problem for the input field.</p>
             // Unless there is "my-icon" class in the relatedTarget, update the width
             console.log(target);
             if ( !target.hasClass("search") ) {
-                $("input[type=text]").css("width", "100px");
-                $(".my-icon-remove").css("display", "none");
+                $(".soln input[type=text]").css("width", "200px");
+                $(".soln .my-icon-remove").css("display", "none");
             }
         });
         
@@ -185,21 +174,162 @@ you will encounter the focusout event problem for the input field.</p>
     });
  </script>
 
-<h2 id="what-is-the-intended-behaviour--solution">What is the intended behaviour &amp; solution?</h2>
+<h2 id="expandable-searchbox-with-remove-button-html--css">Expandable Searchbox with Remove Button (HTML &amp; CSS)</h2>
 
-<p>Obviously, it should not shrunk when reset button or click and be free to shrunk when somewhere outside of the 
-searchbox is clicked.</p>
+<p>Expandable search box is a component that is composed of 1) search button, 2) reset text button, and 3) search input. The reset 
+input and search button should appear on the right, respectively. This component should be relatively positioned(<code>position: relative;</code>)
+ to position the icons to the right absolutely (e.g. <code>position: absolute; right: 5px;</code>) within the component. The following
+ input box can be coded with the following HTML and CSS. With the lack Javascript and css transitions, reset button is 
+ hidden and input does not expand, yet.</p>
 
-<p>To solve this problem, I think of detecting the item that is clicked. The <code>relatedTarget</code> of JQuery event comes 
-in handy here. So, on click, if the classes of the element not matching with the sub elements of search box 
-container, shrunk it. If not, keep it as is. Here is code: </p>
+<div class="defn-container">
+<div class="visualization">
+ <form method="post" action="/search">
+     <span class="search-container">
+         <input class="search" type="text" placeholder="Text me!">
+         <button class="my-icon my-icon-search" type="submit"></button>
+         <input class="my-icon my-icon-remove" type="reset" value="">
+     </span>
+ </form>
+</div>
+</div>
+
+<p>HTML:</p>
+
+<pre><code class="language-html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"search-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"search"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Text me!"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"my-icon my-icon-search"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"my-icon my-icon-remove"</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/span&gt;</span></code></pre>
+
+<p>CSS:</p>
+
+<pre><code class="language-css"><span class="nc">.search-container</span> <span class="p">{</span>
+    <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.my-icon</span> <span class="p">{</span>
+    <span class="k">border</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+    <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+    <span class="k">z-index</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span> <span class="c">/* Make the icon on top of the input box */</span>
+    <span class="c">/* vertically center the icon */</span>
+    <span class="k">top</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="n">transform</span><span class="o">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">-50%</span><span class="p">);</span>
+    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">translateY</span><span class="p">(</span><span class="m">-50%</span><span class="p">);</span>
+    <span class="k">color</span><span class="o">:</span> <span class="nb">dimgray</span><span class="p">;</span> <span class="c">/* Define the text color */</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">22px</span><span class="p">;</span>
+    <span class="k">height</span><span class="o">:</span> <span class="m">22px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.my-icon.my-icon-search</span> <span class="p">{</span>
+    <span class="k">right</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span> <span class="c">/* Define the absolute position in the search container */</span>
+    <span class="c">/* Define the background image for remove button */</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#ffffff</span> <span class="sx">url(/img/icons/search.svg)</span> <span class="k">no-repeat</span> <span class="k">center</span> <span class="k">center</span><span class="p">;</span>
+    <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">contain</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.my-icon.my-icon-remove</span> <span class="p">{</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="c">/* Hide the remove button initially */</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#ffffff</span> <span class="sx">url(/img/icons/remove.svg)</span> <span class="k">no-repeat</span> <span class="k">center</span> <span class="k">center</span><span class="p">;</span> <span class="c">/* Define the background image for remove button */</span>
+    <span class="k">right</span><span class="o">:</span> <span class="m">25px</span><span class="p">;</span> <span class="c">/* Define the absolute position in the search container */</span>
+<span class="p">}</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">text</span><span class="o">]</span> <span class="p">{</span>
+    <span class="c">/* Give an initial width */</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+    <span class="c">/* Make the width changes more smooth */</span>
+    <span class="n">transition</span><span class="o">:</span> <span class="k">width</span> <span class="m">1s</span> <span class="n">ease</span><span class="p">;</span>
+    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span> <span class="k">width</span> <span class="m">1s</span> <span class="n">ease</span><span class="p">;</span>
+
+    <span class="c">/* Make the search box look fancy .*/</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+    <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">3px</span> <span class="m">6px</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">25px</span><span class="p">;</span>
+    <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">42857143</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#555</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
+    <span class="k">background-image</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">4px</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="introducing-the-functionality">Introducing the functionality</h2>
+
+<p>Given this pure HTML and CSS how can we add the functionality?  To be more specific,</p>
+
+<p>1) Expand the input box, when it has focus,</p>
+
+<p>2) Show the reset button when the input box has the focus AND there is text on it.</p>
+
+<p>There are a few ways to expand the input box. For instance, css preselectors(:focus) can be used:</p>
+
+<pre><code class="language-css"><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">text</span><span class="o">]</span><span class="nd">:focus</span><span class="p">{</span>
+     <span class="k">width</span><span class="o">:</span> <span class="m">350px</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
+
+<p>Another way is that, input width can be updated when focusin or focusout event is fired:</p>
+
+<pre><code class="language-javascript"><span class="nx">$</span><span class="p">(</span><span class="s2">"input[type=text]"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"focusin"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="mi">350</span><span class="nx">px</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".eg-expand .my-icon-remove"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"block"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">"input[type=text]"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"focusout"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="mi">250</span><span class="nx">px</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".eg-expand .my-icon-remove"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
+<span class="p">});</span></code></pre>
+
+<p>The css solution may seem an easy and natural solution for expanding an input until you realize the bug in the following
+ input box: it shrinks when the reset button is clicked. Thus, clicked item should be detected which is possible by 
+  Javascript but CSS. </p>
+
+<div class="defn-container">
+<div class="eg-expand">
+  <form method="post" action="/search">
+      <span class="search-container">
+          <input class="search" type="text" placeholder="Text me!">
+          <button class="my-icon my-icon-search" type="submit"></button>
+          <input class="my-icon my-icon-remove" type="reset" value="">
+      </span>
+  </form>
+</div>
+</div>
+
+<p>Reset button should be displayed conditionally and the following Javascript code snippet
+shows a way. When the search box has the focus and user has already entered text
+to the search box, the reset button should reveal.</p>
+
+<pre><code class="language-javascript"><span class="c1">// If there is a text entered to the input box, reveal the remove button</span>
+<span class="c1">// else make keep it hidden.</span>
+<span class="kd">function</span> <span class="nx">displayReset</span><span class="p">(</span><span class="nx">that</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Test the length of the value of the input box</span>
+    <span class="kd">var</span> <span class="nx">display</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">that</span><span class="p">).</span><span class="nx">val</span><span class="p">().</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="s2">"block"</span> <span class="o">:</span> <span class="s2">"none"</span><span class="p">;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".my-icon-remove"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="nx">display</span><span class="p">);</span>
+<span class="p">}</span>
+        
+<span class="c1">// On focusin event, increase the width of the input box</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"input[type=text]"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"focusin"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">displayReset</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">});</span></code></pre>
+
+<p>This additional code, we have the following functionality:</p>
+
+<p>If you text something inside this search box you’ll see the reset button will be visible. To reset it, just click it.
+You’ll realize that with this click the search box is shrinking. Actually, when you click the reset box, your search
+box throws a focusout event, which explains the reason for this shrinking behaviour. However, this not expected from
+a expandable search box.  </p>
+
+<h2 id="how-to-avoid-the-contraction-of-search-box-when-reset-button-is-clicked">How to avoid the contraction of search box when reset button is clicked?</h2>
+
+<p>The first idea that come to my mind is to detect the clicked item. To detect it, the <code>relatedTarget</code> of JQuery 
+event comes in handy. On click, if the classes of the element not matching with the sub elements of search box 
+container, shrink it. If not, keep it as is. Here is code: </p>
 
 <pre><code class="language-javascript"><span class="c1">// Focus out event of search input box</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">"input[type=text]"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"focusout"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
     <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">relatedTarget</span><span class="p">);</span> <span class="c1">// Get the related target of the event</span>
     <span class="c1">// Unless there is "my-icon" class in the relatedTarget, update the width</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">target</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">(</span><span class="s2">"my-icon"</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s2">"input[type=text]"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="s2">"100px"</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"input[type=text]"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="s2">"200px"</span><span class="p">);</span>
         <span class="nx">$</span><span class="p">(</span><span class="s2">".my-icon-remove"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">});</span>
@@ -210,36 +340,42 @@ container, shrunk it. If not, keep it as is. Here is code: </p>
     <span class="c1">// Unless there is "my-icon" class in the relatedTarget, update the width</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">target</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="nx">target</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">(</span><span class="s2">"search"</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s2">"input[type=text]"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="s2">"100px"</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"input[type=text]"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="s2">"200px"</span><span class="p">);</span>
         <span class="nx">$</span><span class="p">(</span><span class="s2">".my-icon-remove"</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">"display"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">});</span></code></pre>
 
 <h2 id="summary">Summary</h2>
 
-<p>With the focus out events given above will prevent the unwanted behaviour such as</p>
+<p>The journey to create an expandable search box starts with creating your css and html
+ files for this component. The container component should be relatively positioned, so
+ that position your reset button absolutely within this component. After all, you need
+ to define your focus in and out events both for the input and reset button. Focus in 
+ event will be uniquely defined for your input box and you should have two seperate</p>
 
-<p>The unwanted behavior for search box component will be prevented by conditionally shrinking the search box. Thus, 1) it
+<p>conditionally shrinking the search box. Thus, 1) it
 will not shrink when the the reset button is clicked, and 2) it remains still when clicking the reset button and 
 then clicking somewhere else. </p>
 
 <p>Go play with the working solution in Chrome, Mozilla, Opera or Safari. :)</p>
 
+<div class="defn-container">
 <div class="soln">
   <form method="post" action="/search">
       <span class="search-container">
-          <input class="search" type="text" placeholder="Text smt.">
+          <input class="search" type="text" placeholder="Now, text me!">
           <button class="my-icon my-icon-search" type="submit"></button>
           <input class="my-icon my-icon-remove" type="reset" value="">
       </span>
   </form>
+</div>
 </div>
 
 <p>If you want to see the solution together with the codes, take a look at 
 <a href="http://jsfiddle.net/yaprak/oaa1k4y2/">this JSFiddle.</a></p>
 
 <p>Next, I’m gonna provide a solution showing a neat way to create a search box as you can find in Apple.com’s website.
-In the begining, there will be just a magnifier, and on click the input search box will open up.</p>
+In the beginning, there will be just a magnifier, and on click the input search box will open up.</p>
 
 
 	<div>
@@ -257,7 +393,7 @@ In the begining, there will be just a magnifier, and on click the input search b
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'yaprak'; // required: replace example with your forum shortname
         var disqus_identifier = '/blog/post/20150102-ResetAnimatedInput/';
-		var disqus_title = 'Resetting an animated search input box without loosing the focus';
+		var disqus_title = 'Expandable search with reset button';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
