@@ -294,9 +294,7 @@ input and search button should appear on the right, respectively. This component
 </div>
 </div>
 
-<p>Reset button should be displayed conditionally and the following Javascript code snippet
-shows a way. When the search box has the focus and user has already entered text
-to the search box, the reset button should reveal.</p>
+<p>With the addition of the following code snippet, your remove button will be conditionally visible. </p>
 
 <pre><code class="language-javascript"><span class="c1">// If there is a text entered to the input box, reveal the remove button</span>
 <span class="c1">// else make keep it hidden.</span>
@@ -308,6 +306,11 @@ to the search box, the reset button should reveal.</p>
         
 <span class="c1">// On focusin event, increase the width of the input box</span>
 <span class="nx">$</span><span class="p">(</span><span class="s2">"input[type=text]"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"focusin"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">displayReset</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// On keydown, check whether there is text in the input box or not</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"input[type=text]"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"keydown"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">displayReset</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 <span class="p">});</span></code></pre>
 
