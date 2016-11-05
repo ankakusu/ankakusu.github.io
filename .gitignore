@@ -1,0 +1,5 @@
+.idea
+output/*.html
+output/*.css
+output/*.js
+node_modules

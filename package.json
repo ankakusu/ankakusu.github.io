@@ -1,0 +1,25 @@
+{
+  "name": "yaprak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pug ./dev/view/pages/*.pug --pretty --out ./output && gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-exec": "^2.1.2",
+    "gulp-postcss": "^6.2.0",
+    "gulp-pug": "^3.1.0",
+    "postcss": "^5.2.5",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-sassy-import": "^1.2.3"
+  },
+  "dependencies": {
+    "pug": "^2.0.0-beta6"
+  }
+}

@@ -1,0 +1,15 @@
+@import 'variables/variables.css';
+
+main {
+    flex: 1;
+}
+
+:--heading {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: var(--p-margin-bottom);
+}
+
+

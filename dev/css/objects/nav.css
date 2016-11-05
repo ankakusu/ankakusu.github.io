@@ -1,0 +1,11 @@
+nav ul {
+    /* box model */
+    display: flex;
+    list-style: none;
+    margin: 1rem;
+}
+
+nav :any-link {
+    /* box model */
+    padding: 1rem;
+}
