@@ -1,3 +1,10 @@
 :root {
     /*--text-font: */
+    --font-size-base: 18px;
+
+    --font-size-p: 1rem;
+
+    --font-size-h1: 3rem;
+
+    --font-size-main-nav: 2rem;
 }

@@ -1,5 +1,4 @@
 @import 'reset.css';
-@import 'normalize.css';
 
 /* Tools */
 @import 'variables/variables.css';
@@ -15,4 +14,5 @@
 
 /* Components */
 @import 'components/header-nav.css';
-
+@import 'components/background.css';
+@import 'components/sr-only.css';

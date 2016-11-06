@@ -4,20 +4,14 @@ var exec = require('gulp-exec');
 var postcss = require('gulp-postcss');
 var cssnext = require('postcss-cssnext');
 var sassyImport = require('postcss-sassy-import');
+var pug = require('gulp-pug');
 
 var config = {
     cssSrcFiles: [
-        // './dev/css/reset.css',
-        // './dev/css/normalize.css',
-        // './dev/css/generics.css',
-        // './dev/css/elements.css',
-        // './dev/css/components/**/*.css',
-        // './dev/css/objects/**/*.css'
         './dev/css/style.css'
     ],
     cssWatchFiles: [
         './dev/css/**/*.css'
-        // './dev/css/*.css'
     ],
     viewSrcFiles: [
         './dev/view/pages/*.pug'
@@ -31,12 +25,21 @@ var config = {
 gulp.task('css', function () {
     var processors = [
         sassyImport(),
-        cssnext({browsers: ['last 1 version']})
+        cssnext({
+            browsers: ['last 1 version']
+        })
     ];
 
     return gulp.src(config.cssSrcFiles)
         .pipe(postcss(processors))
-        // .pipe(concat('style.css'))
+        .pipe(gulp.dest(config.cssDstFile));
+});
+
+gulp.task('view', function buildHTML() {
+    return gulp.src(config.viewSrcFiles)
+        .pipe(pug({
+            pretty: true
+        }))
         .pipe(gulp.dest(config.cssDstFile));
 });
 
@@ -44,6 +47,10 @@ gulp.task('css:watch', function () {
     gulp.watch(config.cssWatchFiles, ['css']);
 });
 
-gulp.task('default', ['css']);
+gulp.task('view:watch', function() {
+    gulp.watch(config.viewWatchFiles, ['view']);
+});
 
-gulp.task('watch', ['css:watch']);
+gulp.task('default', ['css', 'view']);
+
+gulp.task('watch', ['css:watch', 'view:watch']);

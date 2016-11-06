@@ -1,13 +1,20 @@
 * {
+    /* positioning */
     position: relative;
 }
 
 html,
 body {
+    /* box model */
     height: 100%;
+    line-height: 1.7;
 }
 
 body {
+    /* box model */
     display: flex;
     flex-direction: column;
+
+    /* typography */
+    font-size: var(--font-size-base);
 }

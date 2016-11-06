@@ -1,0 +1,14 @@
+.background {
+    /* positioning */
+    position: absolute;
+    z-index: var(--z-index-background);
+
+    /* box model */
+    width: 100%;
+    height: 100%;
+
+    /* visuals */
+    background: no-repeat center url('img/main-page.jpg');
+    background-size: cover;
+    opacity: .6;
+}

@@ -1,0 +1,5 @@
+:root {
+    --color-text: #4e4242;
+    --color-link: #75a246;
+    --color-nav-element: color(white a(0.3));
+}
