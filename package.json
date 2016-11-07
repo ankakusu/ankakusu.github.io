@@ -12,6 +12,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
     "gulp-exec": "^2.1.2",
     "gulp-postcss": "^6.2.0",
     "gulp-pug": "^3.1.0",
@@ -20,6 +21,7 @@
     "postcss-sassy-import": "^1.2.3"
   },
   "dependencies": {
+    "jstransformer-markdown-it": "^2.0.0",
     "pug": "^2.0.0-beta6"
   }
 }

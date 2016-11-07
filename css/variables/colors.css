@@ -1,0 +1,7 @@
+:root {
+    --color-text: #4e4242;
+    --color-link: #4e4242;
+    --color-link-hover: #9c0000;
+    --color-menu-link: rgba(110, 96, 134, 0.6);
+    --color-nav-element: color(white a(0.3));
+}

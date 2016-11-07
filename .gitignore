@@ -1,5 +1,5 @@
+_site/*
+!_site/img/
+
+node_modules/
 .idea
-output/*.html
-output/*.css
-output/*.js
-node_modules

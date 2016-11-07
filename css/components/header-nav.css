@@ -1,0 +1,14 @@
+.header-nav :any-link {
+    /* typography */
+    font-size: var(--font-size-main-nav);
+
+    /* visuals */
+    text-decoration: none;
+    color: var(--color-menu-link);
+}
+
+.header-nav :any-link:hover,
+.header-nav :any-link:active {
+    /* visuals */
+    border-bottom: 3px solid currentColor;
+}

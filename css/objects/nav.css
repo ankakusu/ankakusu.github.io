@@ -1,0 +1,12 @@
+nav :any-link {
+    /* box model */
+    margin: 0 var(--nav-link-padding) 0 0;
+    border: none;
+}
+
+nav ul {
+    /* box model */
+    display: flex;
+    list-style: none;
+}
+

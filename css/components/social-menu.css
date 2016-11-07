@@ -1,0 +1,22 @@
+.social-menu {
+    align-items: center;
+    justify-content: center;
+}
+
+.social-menu img {
+    /* box model */
+    width: 2rem;
+}
+
+.social-menu :any-link {
+    border: none;
+}
+
+.social-menu :any-link:hover,
+.social-menu :any-link:focus,
+.social-menu :any-link:active {
+    /* box model */
+    border: none;
+}
+
+

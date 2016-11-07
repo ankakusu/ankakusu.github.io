@@ -5,22 +5,30 @@ var postcss = require('gulp-postcss');
 var cssnext = require('postcss-cssnext');
 var sassyImport = require('postcss-sassy-import');
 var pug = require('gulp-pug');
+var path = require('path');
+var debug = require('gulp-debug');
 
 var config = {
     cssSrcFiles: [
-        './dev/css/style.css'
+        'css/style.css'
     ],
     cssWatchFiles: [
-        './dev/css/**/*.css'
+        'css/**/*.css'
     ],
+    cssDstFile: '_site/css/',
     viewSrcFiles: [
-        './dev/view/pages/*.pug'
+        '!node_modules/**',
+        '!_**/*.pug',
+        'index.pug',
+        '**/*.pug'
     ],
     viewWatchFiles: [
-        './dev/view/**/*.pug'
+        '**/*.pug'
     ],
-    cssDstFile: 'output'
+    viewDstFile: '_site'
 };
+
+console.log(config.viewSrcFiles);
 
 gulp.task('css', function () {
     var processors = [
@@ -37,10 +45,15 @@ gulp.task('css', function () {
 
 gulp.task('view', function buildHTML() {
     return gulp.src(config.viewSrcFiles)
+        .pipe(debug({title: 'unicorn:'}))
         .pipe(pug({
             pretty: true
         }))
-        .pipe(gulp.dest(config.cssDstFile));
+        .pipe(gulp.dest(config.viewDstFile));
+});
+
+gulp.task('blog', function () {
+
 });
 
 gulp.task('css:watch', function () {
