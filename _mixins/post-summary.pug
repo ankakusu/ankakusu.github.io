@@ -1,9 +1,9 @@
 
-mixin post-summary(date)
+mixin post-summary(post)
   div.post-summary
     div Tarih lan bu
     div
       if block
         block
       else
-        p No content provided
+        #{post.summary}

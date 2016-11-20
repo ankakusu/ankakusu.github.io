@@ -4,7 +4,5 @@ include ../_mixins/post-summary
 
 block content
   main
-    +post-summary
-      :markdown-it
-        # Baslik
-        Ozetce
+    each post in posts
+      +post-summary(post) !{post.summary}
