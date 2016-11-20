@@ -1,0 +1,4 @@
+
+function generateBlogPosts(fileGlob, output) {
+
+}

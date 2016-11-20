@@ -7,3 +7,4 @@ var generateBlogPosts = require('./generateBlogPosts');
 generateBlogIndex.call(config);
 
 // Generate the blog pages
+// generateBlogPosts();
