@@ -3,27 +3,30 @@ var pug = require('pug');
 var glob = require('glob');
 var marked = require('marked');
 
-var readPostSummary = function(fileName) {
+function readPostSummary(fileName) {
     var fileContent = fileSystem.readFileSync(fileName, 'utf8');
     var multiLineSummary = fileContent
-        .replace(/^---\r?\n[\s\S]*---\r?\n([\s\S]*)\r?\n<!--MORE-->[\s\S]*/gm, '$1')
+        .replace(this.blog.regex, '$1')
         .trim();
-    return marked(multiLineSummary.replace(/(?:\r\n|\r|\n)/g, ' '));
-};
+    return marked(multiLineSummary.replace(this.removeNewLineRegex, ' '));
+}
 
-var readPost = function(fileName) {
+function readPost(fileName) {
     return {
-        'summary': readPostSummary(fileName)
+        'summary': readPostSummary.call(this, fileName)
     };
-};
+}
 
-function generateBlogIndex(fileGlob, blogTempate) {
-    var fileNames = glob.sync(fileGlob);
-    var posts = fileNames.map(readPost);
-    var blogPage = pug.renderFile(blogTempate, {
+function generateBlogIndex() {
+    var that = this;
+    var fileNames = glob.sync(this.blog.postSrc);
+    var posts = fileNames.map(function(file) {
+        return readPost.call(that, file);
+    });
+    var blogPage = pug.renderFile(this.blog.indexTemplate, {
         posts: posts
     });
-    fileSystem.writeFileSync('_site/blog/index.html', blogPage);
+    fileSystem.writeFileSync(this.blog.indexOutput, blogPage);
 }
 
 module.exports = generateBlogIndex;

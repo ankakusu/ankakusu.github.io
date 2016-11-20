@@ -1,30 +1,9 @@
-var generateBlogIndex = require('./generateBlogIndex');
+var config = require('./config');
 
-var config = {
-    cssSrcFiles: [
-        'css/style.css'
-    ],
-    cssWatchFiles: [
-        'css/**/*.css'
-    ],
-    cssDstFile: '_site/css/',
-    viewSrcFiles: [
-        '!node_modules/**',
-        '!_**/*.pug',
-        '!blog/*.pug',
-        'index.pug',
-        '**/*.pug'
-    ],
-    viewWatchFiles: [
-        '**/*.pug'
-    ],
-    viewDstFile: '_site',
-    blogFolder: '_posts',
-    blogSrc: '_posts/**/*.md',
-    blogTemplate: 'blog/index.pug'
-};
+var generateBlogIndex = require('./generateBlogIndex');
+var generateBlogPosts = require('./generateBlogPosts');
 
 // Generate the blog index page of the blog.
-generateBlogIndex(config.blogSrc, config.blogTemplate);
+generateBlogIndex.call(config);
 
 // Generate the blog pages
