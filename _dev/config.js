@@ -14,7 +14,6 @@ var config = {
         srcFiles: [
             '!node_modules/**',
             '!_**/*.pug',
-            '!blog/*.pug',
             'index.pug',
             '**/*.pug'
         ],
@@ -27,7 +26,7 @@ var config = {
     blog: {
         inputFolder: '_posts',
         postSrc: '_posts/**/*.md',
-        indexTemplate: 'blog/index.pug',
+        indexTemplate: '_blog/index.pug',
         indexOutput: '_site/blog/index.html',
         regex: /^---\r?\n[\s\S]*---\r?\n([\s\S]*)\r?\n<!--MORE-->[\s\S]*/gm
     }

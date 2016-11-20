@@ -1,8 +1,0 @@
-extends ../_layout/default
-
-include ../_mixins/post-summary
-
-block content
-  main
-    each post in posts
-      +post-summary(post) !{post.summary}
