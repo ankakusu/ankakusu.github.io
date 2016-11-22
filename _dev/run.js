@@ -1,10 +1,9 @@
 var config = require('./config');
 
-var generateBlogIndex = require('./generateBlogIndex');
-var generateBlogPosts = require('./generateBlogPosts');
+var generateBlog = require('./generateBlog');
 
 // Generate the blog index page of the blog.
-generateBlogIndex.call(config);
+generateBlog.postIndexPage.call(config);
 
 // Generate the blog pages
-// generateBlogPosts.call(config);
+generateBlog.posts.call(config);
