@@ -3,6 +3,7 @@ extends ../_layout/default
 include ../_mixins/postSummary
 
 block content
+  h1.sr-only Index page for blogs
   main
     each post in posts
-      +postSummary(post) !{post.summary}
+      +postSummary(post)

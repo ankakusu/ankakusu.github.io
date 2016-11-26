@@ -1,5 +1,19 @@
+include ../_mixins/nav
+
+-
+  var mainMenuItems = [
+  {
+    url: '/',
+    name: '/home'
+  },
+  {
+    url: '/blog',
+    name: '/blog'
+  },
+  {
+    url: '/tango',
+    name: '/tango'
+  }];
+
 header
-  nav: ul.header-nav
-    li: a(href="/") /home
-    li: a(href="/blog") /blog
-    li: a(href="/tango") /tango
+  +nav('header-nav', mainMenuItems)

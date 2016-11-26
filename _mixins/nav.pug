@@ -1,2 +1,9 @@
-mixin nav(navName, ...items)
-  nav: ul(class=navName)
+mixin nav(navName, items)
+  nav
+    ul(class=navName)
+      if block
+        block
+      else
+        each item in items
+          li
+            a(href=item.url)= item.name

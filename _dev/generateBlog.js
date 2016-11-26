@@ -35,10 +35,17 @@ function getMetadata(fileContent, matchedGroupIndex) {
 function readPostAttributes(fileName) {
     var fileContent = fileSystem.readFileSync(fileName, 'utf8');
 
+    var metadata = getMetadata.call(this, fileContent, '$1');
+    var fileNameWithoutDate = fileName.split('-')[1];
+    var folderPath = getBlogPostFolderPath.call(this, metadata);
+
     return {
         'summary': readPostContent.call(this, fileContent, '$2'),
-        'metadata': getMetadata.call(this, fileContent, '$1'),
-        'content': readPostContent.call(this, fileContent, '$3')
+        'metadata': metadata,
+        'content': readPostContent.call(this, fileContent, '$3'),
+        'fileName': fileNameWithoutDate,
+        'folder': this.blog.outputRootFolder + folderPath,
+        'url': '/' + folderPath + fileNameWithoutDate.split('.')[0] + '.html'
     };
 }
 
@@ -71,14 +78,10 @@ function getBlogPostFolderPath(metadata) {
     var dateInString = metadata.created_at.split(' ')[0];
     var createdAt = moment(dateInString, 'YYYY-MM-DD');
 
-    return this.blog.outputRootFolder +
+    return  'blog/' +
         createdAt.year() + '/' +
         (createdAt.month() + 1) + '/' +
         createdAt.date() + '/';
-}
-
-function getBlogPostPath(metadata) {
-    return getBlogPostFolderPath.call(this, metadata) + metadata.title.split(' ').join('-') + '.html';
 }
 
 function generatePosts() {
@@ -93,14 +96,15 @@ function generatePosts() {
     posts.forEach(function(post) {
         var blogPostContent = [post.summary, post.content].join('\n');
 
-        var folderPath = getBlogPostFolderPath.call(that, post.metadata);
-        mkdirp.sync(folderPath);
+        mkdirp.sync(post.folder);
 
         var compiledBlogFile = pug.renderFile(that.blog.blogPageTemplate, {
-           blog: marked(blogPostContent)
+            blog: marked(blogPostContent),
+            post: post
         });
 
-        fileSystem.writeFileSync(getBlogPostPath.call(that, post.metadata), compiledBlogFile);
+        var filePath = post.folder + post.fileName.split('.')[0] + '.html';
+        fileSystem.writeFileSync(filePath, compiledBlogFile);
     });
 }
 

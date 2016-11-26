@@ -1,6 +1,11 @@
 extends _layout/default
 
+include _mixins/nav
+include _mixins/image
+
+
 block content
+
   div.background
   main
     h1.sr-only Yaprak Ayazoğlu
@@ -17,12 +22,17 @@ block content
         | passionate tango dancer and DJ
         | <br>
         | enjoys drawing
-    nav: ul.social-menu
-      li
-        a(href=''): img(src='/img/twitter.svg')
-      li
-        a(href=''): img(src='/img/github.svg')
-      li
-        a(href=''): img(src='/img/mail.svg')
-      li
-        a(href=''): img(src='/img/in.svg')
+      -
+        var socialMenuItems = [
+          {iconSrc: 'twitter.svg'},
+          {iconSrc: 'github.svg'},
+          {iconSrc: 'mail.svg'},
+          {iconSrc:'in.svg'}
+        ];
+        var socialMenu = {name: 'social-menu', items: socialMenuItems};
+      +nav('social-menu')
+        each item in socialMenuItems
+          li
+            a(href='')
+              +image(src=item.iconSrc)
+
