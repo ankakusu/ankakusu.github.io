@@ -3,6 +3,7 @@ var pug = require('pug');
 var glob = require('glob');
 var marked = require('marked');
 var moment = require('moment');
+var mkdirp = require('mkdirp');
 
 function metadataToJSON(metadata) {
     var metadataJSON= {},
@@ -53,9 +54,11 @@ function generatePostIndexPage() {
     var that = this;
     var fileNames = getFileNames.call(this);
 
-    var posts = fileNames.map(function(file) {
-        return readPostAttributes.call(that, file);
-    });
+    var posts = fileNames
+        .map(function(file) {
+            return readPostAttributes.call(that, file);
+        })
+        .reverse();
 
     var blogPage = pug.renderFile(this.blog.indexTemplate, {
         posts: posts
@@ -64,20 +67,21 @@ function generatePostIndexPage() {
     fileSystem.writeFileSync(this.blog.indexOutput, blogPage);
 }
 
-function getBlogPostPath(metadata) {
+function getBlogPostFolderPath(metadata) {
     var dateInString = metadata.created_at.split(' ')[0];
     var createdAt = moment(dateInString, 'YYYY-MM-DD');
 
     return this.blog.outputRootFolder +
         createdAt.year() + '/' +
         (createdAt.month() + 1) + '/' +
-        createdAt.date() + '/' +
-        metadata.title.replace(' ', '-') +
-        '.html';
+        createdAt.date() + '/';
+}
+
+function getBlogPostPath(metadata) {
+    return getBlogPostFolderPath.call(this, metadata) + metadata.title.split(' ').join('-') + '.html';
 }
 
 function generatePosts() {
-    console.log('posts');
     var that = this;
     var fileNames = getFileNames.call(this);
 
@@ -87,11 +91,12 @@ function generatePosts() {
     });
 
     posts.forEach(function(post) {
-        console.log(post.metadata);
-        var dateInString = post.metadata.created_at.split(' ')[0];
         var blogPostContent = [post.summary, post.content].join('\n');
 
-        var compiledBlogFile = pug.renderFile('_blog/blogPage.pug', {
+        var folderPath = getBlogPostFolderPath.call(that, post.metadata);
+        mkdirp.sync(folderPath);
+
+        var compiledBlogFile = pug.renderFile(that.blog.blogPageTemplate, {
            blog: marked(blogPostContent)
         });
 

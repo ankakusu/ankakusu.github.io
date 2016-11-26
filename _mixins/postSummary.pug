@@ -1,7 +1,7 @@
 
 mixin postSummary(post)
   div.post-summary
-    div Tarih lan bu
+    div #{post.metadata.created_at}
     div
       if block
         block

@@ -27,6 +27,7 @@ var config = {
         inputFolder: '_posts',
         postSrc: '_posts/**/*.md',
         indexTemplate: '_blog/index.pug',
+        blogPageTemplate: '_blog/blogPage.pug',
         indexOutput: '_site/blog/index.html',
         outputRootFolder: '_site/blog/',
         regex: /^---\r?\n([\s\S]*)---\r?\n([\s\S]*)\r?\n<!--MORE-->([\s\S]*)/gm
