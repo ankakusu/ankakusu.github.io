@@ -7,15 +7,37 @@ p {
 }
 
 :--wrapper {
+    /* box model */
     padding: var(--wrapper-vertical-spacing) var(--grid-outer-space);
 }
 
 :--heading {
+    /* box model */
     margin: 0 0 var(--p-header-bottom);
+
+    /* typography */
+    line-height: 1.04;
 }
 
 h1 {
-    font-size: var(--font-size-h1);
+    /* typography */
+    font-size: var(--font-size-h1-mobile);
+}
+
+h2 {
+    font-size: var(--font-size-h2-mobile);
+}
+
+@media (--medium) {
+    h1 {
+        /* typography */
+        font-size: var(--font-size-h1);
+    }
+
+    h2 {
+        /* typography */
+        font-size: var(--font-size-h2);
+    }
 }
 
 a {

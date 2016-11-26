@@ -7,13 +7,15 @@ html,
 body {
     /* box model */
     height: 100%;
-    line-height: 1.7;
+    line-height: 1.5;
 }
 
 body {
     /* box model */
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    max-width: 50rem;
 
     /* typography */
     font-size: var(--font-size-base);
