@@ -1,7 +1,10 @@
 extends ../_layout/default
 
 include ../_mixins/postSummary
+include ../_mixins/header
 
+block header
+  +header(headerMenuItems)
 block content
   h1.sr-only Index page for blogs
   main

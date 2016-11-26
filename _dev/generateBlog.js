@@ -60,6 +60,7 @@ function getFileNames() {
 function generatePostIndexPage() {
     var that = this;
     var fileNames = getFileNames.call(this);
+    this.headerMenuItems['blog']['classed'] = 'active';
 
     var posts = fileNames
         .map(function(file) {
@@ -68,7 +69,8 @@ function generatePostIndexPage() {
         .reverse();
 
     var blogPage = pug.renderFile(this.blog.indexTemplate, {
-        posts: posts
+        posts: posts,
+        headerMenuItems: this.headerMenuItems
     });
 
     fileSystem.writeFileSync(this.blog.indexOutput, blogPage);

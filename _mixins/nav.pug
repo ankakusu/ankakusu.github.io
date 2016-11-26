@@ -4,6 +4,6 @@ mixin nav(navName, items)
       if block
         block
       else
-        each item in items
+        each item, index in items
           li
-            a(href=item.url)= item.name
+            a(href=item.url class=item.classed)= item.name

@@ -8,7 +8,8 @@
 }
 
 .header-nav :any-link:hover,
-.header-nav :any-link:active {
+.header-nav :any-link:active,
+.header-nav :any-link.active {
     /* visuals */
     border-bottom: 3px solid currentColor;
 }

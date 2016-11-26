@@ -31,6 +31,20 @@ var config = {
         indexOutput: '_site/blog/index.html',
         outputRootFolder: '_site/',
         regex: /^---\r?\n([\s\S]*)---\r?\n([\s\S]*)\r?\n<!--MORE-->([\s\S]*)/gm
+    },
+    headerMenuItems: {
+        home: {
+            url: '',
+            name: '/home'
+        },
+        blog: {
+            url: '/blog',
+            name: '/blog'
+        },
+        tango: {
+            url: '/tango',
+            name: '/tango'
+        }
     }
 };
 
