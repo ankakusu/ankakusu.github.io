@@ -1,11 +1,22 @@
 :root {
-    --color-text: #4e4242;
-    --color-header: color(#4e4242 blackness(70%));
+    /* Main color selection */
+    --color-brand: #566b78;
+    --color-dark: #333;
+    --color-secondary: rgb(110, 96, 134);
+    --color-highlight: #9c0000;
 
-    --color-link: #4e4242;
-    --color-link-hover: #9c0000;
-    --color-menu-link: rgba(110, 96, 134, 0.6);
-    --color-nav-element: color(white a(0.3));
+    --color-background: #eee;
 
-    --color-code-background: #eee;
+    /* main colors */
+    --color-white: #fff;
+
+    /* Application definitions */
+    --color-text: var(--color-brand);
+    --color-header: var(--color-dark);
+
+    --color-link-hover: var(--color-highlight);
+    --color-menu-link: color(var(--color-secondary) a(.6));
+    --color-nav-element: color(var(--color-white) a(.3));
+
+    --color-code-background: var(--color-background);
 }

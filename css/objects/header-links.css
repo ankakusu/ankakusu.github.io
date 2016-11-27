@@ -1,6 +1,7 @@
 h2 :any-link {
     /* box model */
     border-bottom: none;
+    color: var(--color-header);
 }
 
 h2 :any-link:active,

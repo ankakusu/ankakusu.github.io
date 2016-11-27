@@ -20,4 +20,6 @@ body {
     font-size: var(--font-size-base);
     font-weight: normal;
 
+    /* visuals */
+    color: var(--color-text);
 }
