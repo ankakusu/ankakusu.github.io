@@ -43,19 +43,19 @@ var config = {
     socialMenuItems: {
         twitter: {
             iconSrc: 'twitter.svg',
-            url: '#tw'
+            url: 'https://twitter.com/yaprakaya'
         },
         github: {
             iconSrc: 'github.svg',
-            url: '#gh'
+            url: 'https://github.com/ankakusu'
         },
         mail: {
             iconSrc: 'mail.svg',
-            url: '#gh'
+            url: 'mailto:yaprak.ayazoglu@gmail.com'
         },
         linkedin: {
             iconSrc:'in.svg',
-            url: '#in'
+            url: 'https://www.linkedin.com/in/yaprakayazoglu'
         }
     }
 };

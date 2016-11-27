@@ -1,0 +1,7 @@
+.home {
+    /* box model */
+    margin-top: 4rem;
+
+    /* visuals */
+    transform: rotate(-.1rad);
+}
