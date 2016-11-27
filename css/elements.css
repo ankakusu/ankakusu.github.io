@@ -21,7 +21,10 @@ header {
 
 :--heading {
     /* typography */
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: normal;
     line-height: 1.04;
+    /* visuals */
     color: var(--color-header);
 }
 

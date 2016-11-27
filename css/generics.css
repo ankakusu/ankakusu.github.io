@@ -14,6 +14,10 @@ body {
     /* box model */
     display: flex;
     flex-direction: column;
+
     /* typography */
+    font-family: 'Roboto', sans-serif;
     font-size: var(--font-size-base);
+    font-weight: normal;
+
 }
