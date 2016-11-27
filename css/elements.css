@@ -11,6 +11,12 @@ p {
 :--wrapper {
     /* box model */
     padding: var(--wrapper-vertical-spacing) var(--grid-outer-space);
+    margin: 0 auto;
+    max-width: 55rem;
+}
+
+header {
+    width: 55rem;
 }
 
 :--heading {

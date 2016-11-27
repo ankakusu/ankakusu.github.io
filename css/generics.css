@@ -14,9 +14,6 @@ body {
     /* box model */
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    max-width: 50rem;
-
     /* typography */
     font-size: var(--font-size-base);
 }
