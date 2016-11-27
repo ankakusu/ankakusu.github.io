@@ -11,17 +11,11 @@ var config = {
         ]
     },
     view: {
-        srcFiles: [
-            '!node_modules/**',
-            '!_**/*.pug',
-            'index.pug',
-            '**/*.pug'
-        ],
+        srcFiles: '**/*.pug',
         watchFiles: [
             '**/*.pug'
         ],
         dstFiles: '_site',
-
     },
     blog: {
         inputFolder: '_posts',
@@ -34,7 +28,7 @@ var config = {
     },
     headerMenuItems: {
         home: {
-            url: '',
+            url: '/',
             name: '/home'
         },
         blog: {
@@ -44,6 +38,24 @@ var config = {
         tango: {
             url: '/tango',
             name: '/tango'
+        }
+    },
+    socialMenuItems: {
+        twitter: {
+            iconSrc: 'twitter.svg',
+            url: '#tw'
+        },
+        github: {
+            iconSrc: 'github.svg',
+            url: '#gh'
+        },
+        mail: {
+            iconSrc: 'mail.svg',
+            url: '#gh'
+        },
+        linkedin: {
+            iconSrc:'in.svg',
+            url: '#in'
         }
     }
 };

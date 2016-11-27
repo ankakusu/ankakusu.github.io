@@ -1,13 +1,13 @@
 var fileSystem = require('fs');
 var pug = require('pug');
-var glob = require('glob');
 var marked = require('marked');
 var moment = require('moment');
 var mkdirp = require('mkdirp');
+var fileOperations = require('./utils/fileOperations');
 
 function generatePostIndexPage() {
     var that = this;
-    var fileNames = getFileNames.call(this);
+    var fileNames = fileOperations.get(this.blog.postSrc);
     this.headerMenuItems['blog']['classed'] = 'active';
 
     var posts = fileNames
@@ -26,7 +26,7 @@ function generatePostIndexPage() {
 
 function generatePosts() {
     var that = this;
-    var fileNames = getFileNames.call(this);
+    var fileNames = fileOperations.get(this.blog.postSrc);
 
     // get posts
     var posts = fileNames.map(function(file) {
@@ -100,14 +100,6 @@ function metadataToJSON(metadata) {
         metadataJSON[arr.shift()] = arr.join('').trim();
     });
     return metadataJSON;
-}
-
-function getFileNames() {
-    if (!files) {
-        var files = glob.sync(this.blog.postSrc);
-    }
-
-    return files;
 }
 
 module.exports = {
