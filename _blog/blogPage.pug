@@ -1,6 +1,9 @@
 
 extends ../_layout/default
+include ../_mixins/header
 
+block header
+  +header(headerMenuItems)
 block content
   main
     h1 #{post.metadata.title}

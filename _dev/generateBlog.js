@@ -46,7 +46,7 @@ function generatePosts() {
             headerMenuItems: that.headerMenuItems
         });
 
-        var filePath = post.folder + post.fileName.split('.')[0] + '.html';
+        var filePath = post.folder + post.fileName.replace('.md', '.html');
         fileSystem.writeFileSync(filePath, compiledBlogFile);
     });
 }
