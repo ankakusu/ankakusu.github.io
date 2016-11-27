@@ -10,10 +10,8 @@ block header
 block content
   div.background
   main
-    h1.sr-only Yaprak Ayazoğlu
+    h1 Yaprak Ayazoğlu
     div.me
-      div
-        | <span>YAPRAK AYAZOĞLU</span> <br>
       div
         | front-end web developer @ <a href='https://enrise.com/'>Enrise</a>
         | <br>
@@ -25,9 +23,9 @@ block content
         | <br>
         | enjoys drawing
 
-      +nav('social-menu')
-        each item, index in socialMenuItems
-          li
-            a(href=item.url)
-              +image(src=item.iconSrc)
+    +nav('social-menu')
+      each item, index in socialMenuItems
+        li
+          a(href=item.url)
+            +image(src=item.iconSrc)
 
