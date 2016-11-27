@@ -1,6 +1,7 @@
 var fileSystem = require('fs');
 var pug = require('pug');
 var fileOperations = require('./utils/fileOperations');
+var JSONObject = require('./utils/cloneJSONObject');
 
 function generateViewIndexPages() {
     var that = this;
@@ -13,7 +14,7 @@ function generateViewIndexPages() {
 
     // TODO: improve the code selection logic
     files.forEach(function(file) {
-        var menuItems = JSON.parse(JSON.stringify(that.headerMenuItems));
+        var menuItems = JSONObject.clone(that.headerMenuItems);
 
         if (/^index.pug/.test(file)) {
             menuItems.home['classed'] = 'active';

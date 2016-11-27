@@ -11,5 +11,5 @@
 .header-nav :any-link:active,
 .header-nav :any-link.active {
     /* visuals */
-    border-bottom: 3px solid currentColor;
+    border-bottom: 2px solid currentColor;
 }

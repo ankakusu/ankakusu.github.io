@@ -4,11 +4,13 @@ var marked = require('marked');
 var moment = require('moment');
 var mkdirp = require('mkdirp');
 var fileOperations = require('./utils/fileOperations');
+var JSONObjectUtils = require('./utils/cloneJSONObject');
 
 function generatePostIndexPage() {
     var that = this;
     var fileNames = fileOperations.get(this.blog.postSrc);
-    this.headerMenuItems['blog']['classed'] = 'active';
+    var headerMenuItems = JSONObjectUtils.clone(this.headerMenuItems);
+    headerMenuItems['blog']['classed'] = 'active';
 
     var posts = fileNames
         .map(function(file) {
@@ -18,7 +20,7 @@ function generatePostIndexPage() {
 
     var blogPage = pug.renderFile(this.blog.indexTemplate, {
         posts: posts,
-        headerMenuItems: this.headerMenuItems
+        headerMenuItems: headerMenuItems
     });
 
     fileSystem.writeFileSync(this.blog.indexOutput, blogPage);
@@ -40,7 +42,8 @@ function generatePosts() {
 
         var compiledBlogFile = pug.renderFile(that.blog.blogPageTemplate, {
             blog: marked(blogPostContent),
-            post: post
+            post: post,
+            headerMenuItems: that.headerMenuItems
         });
 
         var filePath = post.folder + post.fileName.split('.')[0] + '.html';
@@ -61,7 +64,7 @@ function readPostAttributes(fileName) {
         'content': readPostContent.call(this, fileContent, '$3'),
         'fileName': fileNameWithoutDate,
         'folder': this.blog.outputRootFolder + folderPath,
-        'url': '/' + folderPath + fileNameWithoutDate.split('.')[0] + '.html'
+        'url': '/' + folderPath + fileNameWithoutDate.replace('.md', '.html')
     };
 }
 

@@ -1,11 +1,10 @@
 
 mixin postSummary(post)
   div.post-summary
-    div
-      if block
-        block
-      else
-        h2
-          a(href=post.url) #{post.metadata.title}
-        p #{post.metadata.created_at}
-        p !{post.summary}
+    if block
+      block
+    else
+      h2
+        a(href=post.url) #{post.metadata.title}
+      p #{post.metadata.created_at}
+      p !{post.summary}

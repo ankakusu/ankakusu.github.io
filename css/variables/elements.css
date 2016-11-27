@@ -1,9 +1,10 @@
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 @custom-selector :--wrapper main, section, article, aside, header, footer;
 
+
 :root {
-    --p-margin-bottom: 1rem;
-    --p-header-bottom: 1.5rem;
+    --p-margin-top: 1rem;
+    --header-bottom: 1.5rem;
 }
 
 
