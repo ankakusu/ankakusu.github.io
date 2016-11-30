@@ -71,8 +71,3 @@ a:hover {
     color: var(--color-link-hover);
 }
 
-header,
-footer {
-    /* visuals */
-    background-color: var(--color-nav-element);
-}

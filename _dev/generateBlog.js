@@ -19,6 +19,7 @@ function generatePostIndexPage() {
         .reverse();
 
     var blogPage = pug.renderFile(this.blog.indexTemplate, {
+        marked: marked,
         posts: posts,
         headerMenuItems: headerMenuItems
     });
@@ -69,10 +70,9 @@ function readPostAttributes(fileName) {
 }
 
 function readPostContent(fileContent, matchedGroupIndex) {
-    var multiLineSummary = fileContent
+    return fileContent
         .replace(this.blog.regex, matchedGroupIndex)
         .trim();
-    return marked(multiLineSummary.replace(this.removeNewLineRegex, ' '));
 }
 
 function getBlogPostFolderPath(metadata) {
