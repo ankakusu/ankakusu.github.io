@@ -4,7 +4,8 @@
 
 :root {
     --p-margin-top: 1rem;
-    --header-bottom: 1.5rem;
+    --header-margin-bottom: 1.5rem;
+    --pre-margin-bottom: 1.5rem;
 }
 
 

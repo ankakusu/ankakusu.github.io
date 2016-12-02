@@ -7,4 +7,6 @@ block header
 block content
   main
     h1 #{post.metadata.title}
+    - var date = post.metadata.created_at.substr(0, post.metadata.created_at.indexOf(' '));
+    p.caption #{moment(date).format('LL')}
     div !{blog}

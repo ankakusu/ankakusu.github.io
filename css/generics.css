@@ -7,13 +7,10 @@ html,
 body {
     /* box model */
     line-height: 1.5;
+    width: 100vw;
 }
 
 body {
-    /* box model */
-    display: flex;
-    flex-direction: column;
-
     /* typography */
     font-family: 'Roboto', sans-serif;
     font-size: var(--font-size-base);

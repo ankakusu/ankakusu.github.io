@@ -6,7 +6,9 @@ nav :any-link {
 
 nav ul {
     /* box model */
-    display: flex;
     list-style: none;
 }
 
+nav li {
+    display: inline-block;
+}

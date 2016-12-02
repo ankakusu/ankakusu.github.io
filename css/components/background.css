@@ -2,6 +2,7 @@
     /* positioning */
     position: absolute;
     z-index: var(--z-index-background);
+    top: 0;
 
     /* box model */
     width: 100vw;

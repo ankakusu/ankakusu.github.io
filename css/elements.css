@@ -5,7 +5,7 @@ main {
 
 p {
     /* box model */
-    margin-top: var(--p-margin-top);
+    margin-bottom: var(--p-margin-top);
 }
 
 :--wrapper {
@@ -15,11 +15,13 @@ p {
     max-width: 55rem;
 }
 
-header {
-    width: 55rem;
-}
+/*header {*/
+    /*width: 55rem;*/
+/*}*/
 
 :--heading {
+    /* box model */
+    margin-bottom: var(--header-margin-bottom);
     /* typography */
     font-family: 'Roboto Slab', sans-serif;
     font-weight: normal;
@@ -35,7 +37,6 @@ strong {
 h1 {
     /* typography */
     font-size: var(--font-size-h1-mobile);
-
 }
 
 h2 {
@@ -71,3 +72,12 @@ a:hover {
     color: var(--color-link-hover);
 }
 
+ol,
+li{
+    list-style-position: inside;
+}
+
+pre,
+iframe {
+    margin-bottom: var(--pre-margin-bottom);
+}

@@ -6,5 +6,6 @@ mixin postSummary(post)
     else
       h2
         a(href=post.url) #{post.metadata.title}
-      p #{post.metadata.created_at}
-      p !{marked(post.summary)}
+        - var date = post.metadata.created_at.substr(0, post.metadata.created_at.indexOf(' '));
+      p #{moment(date).format('LL')}
+      p !{post.summary}

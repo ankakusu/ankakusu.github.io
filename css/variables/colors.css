@@ -5,7 +5,11 @@
     --color-secondary: rgb(110, 96, 134);
     --color-highlight: #9c0000;
 
-    --color-background: #eee;
+    --code-color: #a7adba;
+    --code-background: #f5f4f4;
+    --code-inline-background: #d8d6d6;
+    --code-block-border-left: #69d;
+    --code-block-border-bottom: #d8dee9;
 
     /* main colors */
     --color-white: #fff;
@@ -18,5 +22,10 @@
     --color-menu-link: color(var(--color-secondary) a(.6));
     --color-nav-element: color(var(--color-white) a(.3));
 
-    --color-code-background: var(--color-background);
+    /* Code related */
+    --color-code: var(--code-color);
+    --color-code-background: var(--code-background);
+    --color-code-inline-background: var(--code-inline-background);
+    --color-code-block-border-left: var(--code-block-border-left);
+    --color-code-block-border-bottom: var(--code-block-border-bottom);
 }
