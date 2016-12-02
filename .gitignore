@@ -1,5 +1,4 @@
-_site/*
-!_site/img/
+_site/
 
 node_modules/
 .idea
