@@ -34,11 +34,12 @@ var config = {
         blog: {
             url: '/blog',
             name: '/blog'
-        },
-        tango: {
-            url: '/tango',
-            name: '/tango'
         }
+        // TODO: add tango page later on.
+        // tango: {
+        //     url: '/tango',
+        //     name: '/tango'
+        // }
     },
     socialMenuItems: {
         twitter: {

@@ -18,9 +18,11 @@ function generateViewIndexPages() {
 
         if (/^index.pug/.test(file)) {
             menuItems.home['classed'] = 'active';
-        } else if (/^tango\/index.pug/.test(file)) {
-            menuItems.tango['classed'] = 'active';
         }
+        // TODO add tango page when there's content
+        // } else if (/^tango\/index.pug/.test(file)) {
+        //     menuItems.tango['classed'] = 'active';
+        // }
 
         // render the file
         var page = pug.renderFile(file, {
