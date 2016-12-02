@@ -23,8 +23,12 @@ var config = {
         indexTemplate: '_blog/index.pug',
         blogPageTemplate: '_blog/blogPage.pug',
         indexOutput: '_site/blog/index.html',
+        blogRootFolder: '_site/blog',
         outputRootFolder: '_site/',
         regex: /^---\r?\n([\s\S]*)---\r?\n([\s\S]*)\r?\n<!--MORE-->([\s\S]*)/gm
+    },
+    tango: {
+        tangoRootFolder: '_site/tango'
     },
     headerMenuItems: {
         home: {

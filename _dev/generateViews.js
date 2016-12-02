@@ -2,6 +2,7 @@ var fileSystem = require('fs');
 var pug = require('pug');
 var fileOperations = require('./utils/fileOperations');
 var JSONObject = require('./utils/cloneJSONObject');
+var mkdirp = require('mkdirp');
 
 function generateViewIndexPages() {
     var that = this;
@@ -12,6 +13,9 @@ function generateViewIndexPages() {
         ]
     });
 
+    // TODO: improve default folder creation logic
+    mkdirp(this.blog.blogRootFolder);
+    mkdirp(this.tango.tangoRootFolder);
     // TODO: improve the code selection logic
     files.forEach(function(file) {
         var menuItems = JSONObject.clone(that.headerMenuItems);
