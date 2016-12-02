@@ -12,11 +12,7 @@
   "devDependencies": {
     "glob": "^7.1.1",
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-debug": "^2.1.2",
-    "gulp-exec": "^2.1.2",
     "gulp-postcss": "^6.2.0",
-    "gulp-pug": "^3.1.0",
     "mkdirp": "^0.5.1",
     "postcss": "^5.2.5",
     "postcss-cssnext": "^2.8.0",

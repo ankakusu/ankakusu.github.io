@@ -20,6 +20,8 @@ lastCommitId=$(getLastCommitId)
 
 echo "*** Compiling..."
 node ./_dev/run.js
+# TODO: remove dependency to gulp
+gulp
 
 echo "*** Switching to master..."
 git checkout master
