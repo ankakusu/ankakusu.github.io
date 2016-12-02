@@ -57,6 +57,7 @@ demonstrate here.
         /* Define the background image for remove button */
         background: #ffffff url(/img/icons/search.svg) no-repeat center center;
         background-size: contain;
+        pointer-events: none;
     }
     
     .my-icon.my-icon-remove {
@@ -87,7 +88,10 @@ demonstrate here.
     }
     
  </style>
- <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+ <script
+   src="https://code.jquery.com/jquery-2.2.4.min.js"
+   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+   crossorigin="anonymous"></script>
  <script type="application/javascript">
     $(document).ready(function(){
     
