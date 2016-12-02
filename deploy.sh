@@ -2,9 +2,11 @@
 
 # Copied from https://github.com/vy/vy.github.io/blob/source/publish.sh
 set -e
+set -x
 
 isEverythingComitted() {
-	git status | grep -q "nothing to commit, working directory clean"
+	outputLineCount=$(git status -s | wc -l) #| grep -q "nothing to commit, working directory clean"
+	[ $outputLineCount -eq 0 ]
 }
 
 getLastCommitId() {
