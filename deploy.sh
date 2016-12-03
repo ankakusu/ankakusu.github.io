@@ -21,9 +21,11 @@ isEverythingComitted || {
 lastCommitId=$(getLastCommitId)
 
 echo "*** Compiling..."
+
+rsync -a --delete --force _img/ _site/img
 node ./_dev/run.js
 # TODO: remove dependency to gulp
-gulp
+gulp deploy
 
 echo "*** Switching to master..."
 git checkout master
