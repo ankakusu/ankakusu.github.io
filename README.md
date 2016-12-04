@@ -3,10 +3,11 @@
 This is my personal website which is build by a static site generator 
 developed by me using JavaScript based technologies.
 
-Note that, for the time being, this generator is strongly coupled with 
-my own implementation, and is not a fully reusable content generator site, yet. 
+Note that, for the time being, this generator is coupled with my own website 
+implementation, and is not a fully reusable content generator, yet. 
 
 ## The Stack
+
 - [PugJS](https://pugjs.org/api/getting-started.html) as the templating engine.
 - [MarkdownIt](https://github.com/markdown-it/markdown-it) as a Markdown parser.
 - HighlightJS as offline syntax highlighting.
@@ -15,17 +16,20 @@ plugins of post css for building the CSS.
 
 ## Notes on the folder structure
 
-All the files inside the folders that start with `_` may be code
-generation scripts(`_dev`), partial files or view templates for the
-site(`_blog`, `_includes`, `_layout`, `_mixins`), the blog content(`_posts`).
+There are two types of folders the ones start with underscore(`_`),
+and without underscore.
 
-All the folders without `_` will be compiled and placed with the same name
-under the root folder.
+All the underscore(`_`) folders include code generation scripts(`_dev`), 
+partial views, view templates for the site
+(`_blog`, `_includes`, `_layout`, `_mixins`) and the blog content(`_posts`).
 
-For instance, the folder `css` does not start with an underscore and thus, 
-when the files are compiled, the content will be placed `<output-folder-name>/css/`.
+The non-underscored(`_`) folder contents will be compiled and 
+placed with the same name under the root folder. For instance, the folder 
+`css` does not start with an underscore and thus, when the files are 
+compiled, the content will be placed `<output-folder-name>/css/`.
 
-Now, I would like to elaborate more on the files and their purposes. 
+Now, I would like to elaborate more on the implementation and will add
+extra notes grouped by folder names.
 
 ```
 # -------------------------
@@ -70,9 +74,45 @@ Now, I would like to elaborate more on the files and their purposes.
     └── index.pug
 ```
 
+### Static content generation scripts: `_dev` folder 
+
+This is the heart of the static site generation. 
+
+<strong>_dev/config.js</strong>
+
+config.js, contains all the configuration files, as in source, destination and watch files and folders.
+
+In addition, it has the routes for the navigations menus. For instance, the social and header navigation menu 
+links also defined within this file. It is in my todo list to remove website implementation specific 
+configurations out.
+
+<strong>_dev/generateBlog.js</strong>
+
+Responsible to generate the blog index page and the blog pages.
+
+1. The blog index page, which is the page that you can only see the summaries of the blog posts
+(_e.g._ http://yaprakayazoglu.com/blog/).
+The `generatePostIndexPage()` function fetches all the blog posts, extracts the summary content and meta data 
+and passes those values to the `_blog/index.pug` template.
+
+1. The blog page
+The `generatePosts()` function iterates through all the blog posts under `_posts` folder, renders them with the 
+blogPage.pug template, parses the markdown content, highlights the code blocks(if necessary), creates the 
+output folder(if necessary) and writes the blog posts in HTML format.
+
+<strong>_dev/run.js</strong>
+
+Run.js runs all the content generator scripts to have compile all the website.
+
+<strong>_site</strong>
+
+This is the output folder, where all the generated content will be placed under this folder. Thus, this folder is
+in the .gitignore list.
+
 ### The Pug templates:
 
-The pug templates are living in the following folder and files:
+As you can see in the tree view above, the pug templates are living 
+in the following folder and files:
 
 - index.pug:
 The home page of the website, which extends from `_layout/default.pug`.
@@ -85,44 +125,14 @@ Static parts of the website like the head and the footer.
 - _blog/
 Templates that are related to the blog posts.
 
-### Static content generation scripts: `_dev` folder 
-
-This is the heart of the static site generation part. Let's discuss all the files sequentially.
-
-<strong>_dev/config.js</strong>
-
-This file includes all the configuration files, like the source, destination and watch files and folders.
-
-This file also includes the routes for the navigations menus. For instance, the social and header navigation menu 
-links also defined within this file.
-
-<strong>_dev/generateBlog.js</strong>
-
-The blog part has mainly two types of pages, 
-
-1. The blog index page, which is the page that you can only see the summaries of the blog posts
-(_e.g._ http://yaprakayazoglu.com/blog/).
-The `generatePostIndexPage()` function fetches all the blog posts, extracts the summary content and meta data 
-and passes those values to the `_blog/index.pug` template.
-
-1. The blog page, which displays all content related to a specific content page.
-The `generatePosts()` function iterates through all the fetched blog posts, renders them with the 
-blogPage.pug template, parses the markdown content, highlights the codes(if there's a code snippet),
-creates the output folder and writes the blog posts in HTML format.
-
-<strong>_dev/run.js</strong>
-
-Run.js is just runs all the content generator scripts to have compile all your website.
-
-<strong>_site</strong>
-
-This is the output folder, where all the generated content will be placed under this folder.
-
 ## How does it work?
 
 ### While developing...
 
-While building or changing the design of my website, I simply run `gulp watch` to render css files.
+- `gulp watch`
+
+Watcher helps me to automatically update the changes.
+
 This part will be replaced with a JavaScript codes and the dependency to Gulp task manager will be
 reduced. Whenever, there's a change in your css folder, the it will compiled into the path that is
 defined in `config.css.destFolder`. In my implementation, that is `_site/css/styles.css`.
