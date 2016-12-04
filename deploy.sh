@@ -22,8 +22,8 @@ lastCommitId=$(getLastCommitId)
 
 echo "*** Compiling..."
 
-rsync -a --delete --force _img/ _site/img
-node ./_dev/run.js
+rsync -a --delete --force _img/ _site/img # Copy the images...
+node ./_dev/run.js # Compile the views and blog posts.
 # TODO: remove dependency to gulp
 gulp deploy
 
