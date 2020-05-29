@@ -1,8 +1,0 @@
-bak
-bower_components
-node_modules
-sass/.sass-cache
-sass/.sass-cache/*
-*.js
-*.js.map
-css/*
