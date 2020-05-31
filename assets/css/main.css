@@ -84,6 +84,7 @@ main {
 article {
   max-width: var(--readable-text-width);
   margin: 0 auto;
+  text-align: justify;
 }
 
 ul,
