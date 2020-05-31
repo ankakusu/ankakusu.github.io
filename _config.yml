@@ -1,0 +1,4 @@
+url: "https://yaprak.ayazoglu.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "Yaprak Ayazoglu" # the name of your site, e.g. ACME Corp.
+excerpt_separator: "<!--more-->"
