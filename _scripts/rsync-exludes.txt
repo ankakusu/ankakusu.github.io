@@ -1,6 +1,0 @@
-_*/
-_*
-.idea
-.jekyll-cache
-.gitignore
-*.md
