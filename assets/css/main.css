@@ -31,7 +31,10 @@
   --font-size: 18px;
   --line-height: 32px;
   --readable-text-width: 570px;
+  --post-image-size: 720px;
   --icon-size-medium: 32px;
+
+  --cartoon-image-size: var(--post-image-size);
 }
 
 :root {
@@ -132,7 +135,7 @@ a:hover {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background: no-repeat center url(/assets/images/backgroun-image.jpg);
+    background: no-repeat center url(/assets/images/background-image.jpg);
     background-size: cover;
     opacity: .3;
   }
@@ -157,3 +160,6 @@ footer img {
   border: 0;
 }
 
+.cartoon-image {
+  left: calc((var(--readable-text-width) - var(--cartoon-image-size)) / 2);
+}
