@@ -30,7 +30,7 @@
   --spacing-block-elements: 1.5rem;
   --font-size: 18px;
   --line-height: 32px;
-  --readable-text-width: 570px;
+  --readable-text-width: 590px;
   --post-image-size: 720px;
   --icon-size-medium: 32px;
 
@@ -54,7 +54,6 @@
 * {
   position: relative;
   box-sizing: border-box;
-  /*outline: red 1px solid;*/
 }
 
 html,
@@ -76,7 +75,8 @@ ul {
   color: var(--text-color);
 }
 
-nav {
+nav,
+article {
   padding: var(--padding);
 }
 
@@ -161,5 +161,12 @@ footer img {
 }
 
 .cartoon-image {
-  left: calc((var(--readable-text-width) - var(--cartoon-image-size)) / 2);
+  display: none;
+}
+
+@media all and (min-width: 768px) {
+  .cartoon-image {
+    display: block;
+    left: calc((var(--readable-text-width) - var(--cartoon-image-size) - 2 * var(--padding)) / 2);
+  }
 }
