@@ -27,7 +27,7 @@ echo "*** Switching to master..."
 git checkout master
 
 echo "*** Syncing output files..."
-rsync --exclude-from _scripts/rsync-excludes.txt -a --delete --force _site/ .
+rsync _site/ .
 
 echo "*** Adding all output files to the repository..."
 git add .
