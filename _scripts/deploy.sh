@@ -36,7 +36,7 @@ echo "*** Committing changes..."
 git commit -a -m "Copied changes from source/$lastCommitId."
 
 echo "*** Pushing changes..."
-git push -f origin master source
+git push -f origin master develop
 
 echo "*** Switching back to source..."
 git checkout source
