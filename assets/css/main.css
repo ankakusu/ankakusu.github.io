@@ -1,0 +1,165 @@
+:root {
+  --green-secondary: #70c8be;
+  --green-primary: #00A99A;
+  --green-accent: #B8E1DD;
+
+  --red-primary: #F47e55;
+  --blue-darker: #42525c;
+  --blue-dark: #566b78;
+  --blue-primary: #45768f;
+  --blue: #62ccf5;
+  --red-secondary: #f16a73;
+
+  --yellow: #CDC884;
+  --gray-secondary: #b6ada7;
+  --pink: #FFB7AE;
+
+  --gray-primary: #614747;
+
+  --text-background: #ffffff6b;
+}
+
+:root {
+  --text-color: var(--blue-darker);
+  --link-color: var(--red-secondary);
+  --link-hover: var(--blue-primary);
+}
+
+:root {
+  --spacing-default: 1rem;
+  --spacing-block-elements: 1.5rem;
+  --font-size: 18px;
+  --line-height: 32px;
+  --readable-text-width: 570px;
+  --post-image-size: 720px;
+  --icon-size-medium: 32px;
+
+  --cartoon-image-size: var(--post-image-size);
+}
+
+:root {
+  --padding: calc(var(--spacing-default) * 0.7);
+  --margin: calc(var(--spacing-block-elements) * 0.7);
+  --footer-spacing: calc(var(--spacing-block-elements) * 0.7);
+}
+
+@media all and (min-width: 450px) {
+  :root {
+    --padding: var(--spacing-default);
+    --margin: var(--spacing-block-elements);
+    --footer-spacing: var(--spacing-block-elements);
+  }
+}
+
+* {
+  position: relative;
+  box-sizing: border-box;
+  /*outline: red 1px solid;*/
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+header,
+footer,
+section,
+article,
+main,
+div,
+p,
+ul {
+  color: var(--text-color);
+}
+
+nav {
+  padding: var(--padding);
+}
+
+main {
+  min-height: calc(100% - (4 * var(--padding)) - (2 * var(--line-height)));
+}
+
+article {
+  max-width: var(--readable-text-width);
+  margin: 0 auto;
+  text-align: justify;
+}
+
+ul,
+ul li {
+  margin:0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+
+p,
+h1 {
+  margin-top: 0;
+}
+
+nav ul {
+  display: flex;
+}
+
+footer ul {
+  justify-content: center;
+}
+
+nav ul li {
+  margin-right: var(--padding);
+}
+
+nav a {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+@media all and (min-width: 450px) {
+  .background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: no-repeat center url(/assets/images/background-image.jpg);
+    background-size: cover;
+    opacity: .3;
+  }
+}
+
+footer {
+  text-align: center;
+}
+
+footer img {
+  height: var(--icon-size-medium);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.cartoon-image {
+  left: calc((var(--readable-text-width) - var(--cartoon-image-size)) / 2);
+}
